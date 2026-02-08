@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <!--<< Header Area >>-->
+    <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="KubeSecureBox">
+        <meta name="description" content="KubeSecureBox – Cluster Kubernetes sur Raspberry Pi : monitoring, GitOps, outils de pentesting et sécurité.">
+        <!-- ======== Page title ============ -->
+        <title>KubeSecureBox – Cluster Kubernetes, Monitoring &amp; Pentesting</title>
+        <!--<< Favcion >>-->
+        <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+
+        <!-- Preloader Start -->
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner">                
+                </div>
+                <div class="txt-loading">
+                    <span data-text-preloader="K" class="letters-loading">K</span>
+                    <span data-text-preloader="S" class="letters-loading">S</span>
+                    <span data-text-preloader="B" class="letters-loading">B</span>
+                </div>
+                <p class="text-center">Chargement</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!-- pp Back To Top Start -->
+        <button id="pp-back-top" class="pp-back-to-top show">
+           <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <!-- pp MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <!-- Offcanvas Area Start -->
+         <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo">
+                                <a href="index.html">
+                                    <img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img">
+                                </a>
+                            </div>
+                            <div class="offcanvas__close">
+                                <button>
+                                <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text d-none d-xl-block">
+                            Cluster Kubernetes (K3s) sur Raspberry Pi. Provisionnement Ansible (sécurité, Tailscale, jointure au cluster). GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki), apps métier. Accès sécurisé via Tailscale.
+                        </p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact">
+                            <h4>Accès</h4>
+                            <ul>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon">
+                                        <i class="fal fa-network-wired"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="https://grafana.kubesecurebox.com">Grafana</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-code-branch"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="https://argocd.kubesecurebox.com">ArgoCD</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-shield-halved"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="https://pentesting.kubesecurebox.com">Pentesting</a>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <div class="offcanvas__contact-icon mr-15">
+                                        <i class="fal fa-gears"></i>
+                                    </div>
+                                    <div class="offcanvas__contact-text">
+                                        <a target="_blank" href="https://automation.kubesecurebox.com">n8n (automation)</a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="header-button mt-4"></div>
+                            <a href="applications.html" class="pp-theme-btn mb-3 d-inline-block">
+                                <span class="pp-text-btn">Mes applications</span>
+                            </a>
+                            <a href="about.html" class="pp-theme-btn mb-3 d-inline-block">
+                                <span class="pp-text-btn">Architecture</span>
+                            </a>
+                            <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn mb-3 d-inline-block">
+                                <i class="fab fa-github me-2"></i> Code source (GitHub)
+                            </a>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://grafana.kubesecurebox.com" target="_blank" rel="noopener" title="Grafana"><i class="fa-solid fa-chart-line"></i></a>
+                                <a href="https://argocd.kubesecurebox.com" target="_blank" rel="noopener" title="ArgoCD"><i class="fa-solid fa-code-branch"></i></a>
+                                <a href="https://pentesting.kubesecurebox.com" target="_blank" rel="noopener" title="Pentesting"><i class="fa-solid fa-shield-halved"></i></a>
+                                <a href="https://automation.kubesecurebox.com" target="_blank" rel="noopener" title="n8n"><i class="fa-solid fa-gears"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <!-- Header Section Start -->
+         <header id="header-sticky" class="header-1">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main style-1">
+                        <div class="logo">
+                            <a href="index.html#hero" class="header-logo">
+                                <img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img">
+                            </a>
+                            <a href="index.html#hero" class="header-logo-2">
+                                <img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img">
+                            </a>
+                        </div>
+                        <div class="mean__menu-wrapper">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html#about">À propos</a></li>
+                                        <li><a href="index.html#services">Bénéfices</a></li>
+                                        <li><a href="index.html#fonctionnement">Fonctionnement</a></li>
+                                        <li><a href="index.html#composants">Composants</a></li>
+                                        <li><a href="index.html#interfaces">Interfaces</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center">
+                            <a href="applications.html" class="pp-theme-btn d-none d-xl-inline-flex me-3">
+                                Mes applications <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                            <div class="header__hamburger d-xl-none my-auto">
+                                <div class="sidebar__toggle">
+                                    <div class="header-bar style-1">
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header> 
+
+
+        <!-- pp Hero Section Start -->
+        <section id="hero" class="pp-hero-section pp-hero-1 fix">
+            <div class="top-shape">
+                <img src="assets/img/home-1/hero/hero-bg.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="pp-hero-content">
+                            <h1 class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                               Cluster Raspberry Pi <br> GitOps, monitoring &amp; apps métier
+                            </h1>
+                            <p class="wow fadeInUp" data-wow-delay=".5s">
+                                KubeSecureBox est un cluster Kubernetes (K3s) sur Raspberry Pi. Chaque nœud est configuré avec Ansible (sécurité, réseau, kubernetes). GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki) et apps métier (pentesting, n8n). Accès distant via Tailscale.
+                            </p>
+                            <div class="pp-hero-button">
+                                <a href="#about" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir l’architecture <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <a href="#services" class="pp-theme-btn pp-style-2 wow fadeInUp" data-wow-delay=".3s">Bénéfices <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="pp-hero-image wow img-custom-anim-bottom" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                            <img src="assets/img/home-1/hero/hero-1.jpg" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-Brand Section Start -->
+        <div class="pp-brand-section section-padding pb-0 fix">
+            <div class="container custom-container-3">
+                <div class="brand-wrapper style-2">
+                    <div class="brand-title wow fadeInUp" data-wow-delay=".3s">
+                        <h3>Outils &amp; technologies du cluster</h3>
+                    </div>
+                    <div class="swiper pp-brand-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/kubernetes.png" alt="Kubernetes">
+                                    <span class="brand-name">Kubernetes</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/n8n.webp" alt="n8n">
+                                    <span class="brand-name">n8n</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/ansible.webp" alt="Ansible">
+                                    <span class="brand-name">Ansible</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/prometheus.png" alt="Prometheus">
+                                    <span class="brand-name">Prometheus</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/grafana.svg" alt="Grafana">
+                                    <span class="brand-name">Grafana</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/argocd.png" alt="ArgoCD">
+                                    <span class="brand-name">ArgoCD</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/loki.png" alt="Loki">
+                                    <span class="brand-name">Loki</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/tailscale.png" alt="Tailscale">
+                                    <span class="brand-name">Tailscale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Pp-About Section Start -->
+        <section id="about" class="pp-about-section section-padding fix">
+            <div class="container">
+                <div class="pp-about-wrapper">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="about-image">
+                                <img src="assets/img/home-1/about/about-1.jpg" alt="img" class="wow img-custom-anim-left" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                                <div class="about-image-2">
+                                    <img src="assets/img/home-1/about/about-2.jpg" alt="img">
+                                </div>
+                                <div class="circle-shape">
+                                    <img src="assets/img/home-1/about/shape-2.png" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <div class="pp-section-title mb-0">
+                                    <span class="pp-sub-title wow fadeInUp">À PROPOS</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                        Infrastructure matérielle &amp; logicielle
+                                    </h2>
+                                </div>
+                                <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
+                                    <strong>Infrastructure matérielle</strong> — Un nœud maître Raspberry Pi 4 (8 Go) et deux workers Pi 5 (8 Go), disque 4 To en NFS, switch Gigabit. Cartes microSD et câbles Ethernet pour l’interconnexion.
+                                </p>
+                                <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
+                                    <strong>Infrastructure logicielle</strong> — Chaque nœud est provisionné avec Ansible (sécurité, Tailscale, jointure au cluster Kubernetes). Sur le cluster : Kubernetes (K3s), GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki). Apps métier : outil de pentesting, n8n (automatisation), parmi d'autres applications déployées sur le cluster.
+                                </p>
+                                <div class="about-count-item wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="count-text">
+                                        <h2><span class="pp-count">1</span></h2>
+                                        <p>Pi 4 Control Plane</p>
+                                    </div>
+                                    <div class="count-text">
+                                        <h2><span class="pp-count">2</span></h2>
+                                        <p>Pi 5 Workers</p>
+                                    </div>
+                                    <div class="count-text">
+                                        <h2><span class="pp-count">4</span></h2>
+                                        <p>To stockage NFS</p>
+                                    </div>
+                                </div>
+                                <a href="#services" class="pp-theme-btn wow fadeInUp" data-wow-delay=".5s">En savoir plus <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-Offer Section Start -->
+        <section id="services" class="pp-offer-section section-padding fix section-bg">
+            <div class="container">
+                <div class="pp-section-title text-center">
+                    <span class="pp-sub-title wow fadeInUp">
+                        BÉNÉFICES
+                        <span class="pp-style-2"></span>
+                    </span>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                       Atouts &amp; cas d’usage
+                    </h2>
+                 </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="pp-offer-box-item">
+                            <div class="pp-offer-icon">
+                                <img src="assets/img/home-1/icon/01.svg" alt="img">
+                            </div>
+                            <div class="pp-offer-content">
+                                <h3>Contrôle &amp; reproductibilité</h3>
+                                <p>
+                                    Tout le cluster est décrit en Git (YAML, Kustomize, Helm). Un push suffit pour déployer ou rollback : l’infra reste à portée de main, reproductible et versionnée.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="pp-offer-box-item">
+                            <div class="pp-offer-icon">
+                                <img src="assets/img/home-1/icon/02.svg" alt="img">
+                            </div>
+                            <div class="pp-offer-content">
+                                <h3>Visibilité &amp; réactivité</h3>
+                                <p>
+                                    Dashboards et logs centralisés, alertes Discord dès qu’une anomalie est détectée. Surveillance en temps réel l’état du cluster sans ouvrir un terminal.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="pp-offer-box-item">
+                            <div class="pp-offer-icon">
+                                <img src="assets/img/home-1/icon/03.svg" alt="img">
+                            </div>
+                            <div class="pp-offer-content">
+                                <h3>Lab sécurisé &amp; self-hosted</h3>
+                                <p>
+                                    Accès uniquement via Tailscale. Idéal pour apprendre Kubernetes, développer et déployer des applications métier en toute autonomie, sans dépendre du cloud.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-How-Wowk Section Start -->
+        <section id="fonctionnement" class="pp-how-work-section section-padding fix section-bg-2">
+            <div class="top-shape">
+                <img src="assets/img/home-1/feature/bg-shape.png" alt="img">
+            </div>
+            <div class="line-shape">
+                <img src="assets/img/home-1/feature/line.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-section-title text-center">
+                    <span class="pp-sub-title wow fadeInUp">
+                        FONCTIONNEMENT
+                        <span class="pp-style-2"></span>
+                    </span>
+                    <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
+                       GitOps, monitoring et apps
+                    </h2>
+                 </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="pp-how-work-items">
+                            <h6>ÉTAPE 01</h6>
+                            <h3>Manifestes Git → ArgoCD</h3>
+                            <p>
+                                Repo GitHub (YAML, Kustomize, Helm). ArgoCD synchronise et applique la config dans le cluster Kubernetes (K3s).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                        <div class="pp-how-work-items pp-style-2">
+                            <h6>ÉTAPE 02</h6>
+                            <h3>Métriques &amp; logs</h3>
+                            <p>
+                                Prometheus scrape les métriques, Promtail envoie les logs vers Loki. Grafana pour visualisation et alerting Discord.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                        <div class="pp-how-work-items">
+                            <h6>ÉTAPE 03</h6>
+                            <h3>Apps métier</h3>
+                            <p>
+                                Déployées sur le cluster et exposées uniquement sur le réseau Tailscale. Chaque service est accessible en HTTPS via un Ingress, sur un sous-domaine de kubesecurebox.com.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-key-feature Section Start -->
+        <section class="pp-key-feature-section section-padding pb-0 fix">
+            <div class="container">
+                <div class="pp-key-feature-wrapper">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="pp-key-feature-image">
+                                <img src="assets/img/home-1/feature/02.jpg" alt="img">
+                                <div class="pp-key-feature-image-2 float-bob-y">
+                                    <img src="assets/img/home-1/feature/01.jpg" alt="img">
+                                </div>
+                                <div class="pp-key-feature-image-3 float-bob-y">
+                                    <img src="assets/img/home-1/feature/03.jpg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pp-key-feature-content">
+                                <div class="pp-section-title mb-0">
+                                    <span class="pp-sub-title wow fadeInUp">FONCTIONNALITÉS</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                         Stockage &amp; réseau
+                                    </h2>
+                                </div>
+                                <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
+                                    NFS sur le Pi 4 pour le disque 4 To, NFS Provisioner pour créer des PV/PVC à la demande. Ansible déploie sur chaque Pi : Tailscale (accès distant 100.x.x.x), UFW, Fail2ban, et l’agent pour rejoindre le cluster Kubernetes.
+                                </p>
+                                <ul class="pp-feature-list wow fadeInUp" data-wow-delay=".3s">
+                                    <li>NFS + StorageClass pour les volumes persistants</li>
+                                    <li>Tailscale VPN, pas de ports exposés sur Internet</li>
+                                    <li>UFW, Fail2ban, Auditd, Lynis</li>
+                                </ul>
+                                <a href="#interfaces" class="pp-theme-btn wow fadeInUp" data-wow-delay=".5s">En savoir plus <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-key-feature Section Start -->
+        <section class="pp-key-feature-section section-padding fix">
+            <div class="container">
+                <div class="pp-key-feature-wrapper pp-style-2">
+                    <div class="row g-4">
+                        <div class="col-lg-6">
+                            <div class="pp-key-feature-content">
+                                <div class="pp-section-title mb-0">
+                                    <span class="pp-sub-title wow fadeInUp">FONCTIONNALITÉS</span>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                         Dashboards &amp; alerting
+                                    </h2>
+                                </div>
+                                <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
+                                    Grafana s’appuie sur Prometheus et Loki comme sources de données. Dashboards dédiés : vue d’ensemble KubeSecureBox, métriques par nœud (CPU, RAM, disque, température), résumé des nœuds et exploration des logs.
+                                </p>
+                                <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
+                                    Les alertes sont envoyées sur Discord (nœud indisponible, état NotReady, seuils RAM/CPU/disque, température, charge).
+                                </p>
+                                <ul class="pp-feature-list wow fadeInUp" data-wow-delay=".3s">
+                                    <li>KubeSecureBox Overview, Node Summary, Loki Logs</li>
+                                    <li>Contact point Discord, règles kubesecurebox-infra</li>
+                                    <li>HTTPS via cert-manager</li>
+                                </ul>
+                                <a href="#interfaces" class="pp-theme-btn wow fadeInUp" data-wow-delay=".5s">En savoir plus <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pp-key-feature-image">
+                                <img src="assets/img/home-1/feature/06.jpg" alt="img">
+                                <!--<div class="pp-key-feature-image-2 float-bob-y">
+                                    <img src="assets/img/home-1/feature/04.jpg" alt="img">
+                                </div>-->
+                                <div class="pp-key-feature-image-3 float-bob-y">
+                                    <img src="assets/img/home-1/feature/05.jpg" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-pricing Section Start -->
+        <section id="composants" class="pp-pricing-section section-padding fix section-bg-2">
+            <div class="top-shape">
+                <img src="assets/img/home-1/feature/bg-shape.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-section-title text-center">
+                    <span class="pp-sub-title wow fadeInUp">
+                        COMPOSANTS
+                        <span class="pp-style-2"></span>
+                    </span>
+                    <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
+                      Trois piliers du cluster
+                    </h2>
+                 </div>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="pp-pricing-main-item">
+                            <div class="pp-pricing-card-item">
+                                <div class="pp-pricing-header">
+                                    <h5>Infrastructure</h5>
+                                    <h2>Hardware &amp; déploiement</h2>
+                                </div>
+                                <ul class="pp-pricing-list">
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Stack open source, sans dépendance cloud</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Provisionnement répétable et versionné (Ansible, Git)</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Réseau Tailscale : cluster et apps non exposés sur Internet (seul ce site l'est).</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Stockage partagé et volumes à la demande (PV/PVC)</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-button">
+                                <a href="#about" class="pp-theme-btn">Voir l’architecture</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="pp-pricing-main-item">
+                            <div class="pp-pricing-card-item">
+                                <div class="pp-pricing-header">
+                                    <h5>Monitoring</h5>
+                                    <h2>Observabilité &amp; réactivité</h2>
+                                </div>
+                                <ul class="pp-pricing-list">
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Métriques et logs centralisés (Prometheus, Loki)</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Tableaux de bord et alerting proactif (Discord)</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Visibilité par nœud et par pod, en temps réel</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Historique et exploration des logs (Grafana)</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-button">
+                                <a href="application-grafana.html" class="pp-theme-btn">Voir Grafana</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="pp-pricing-main-item">
+                            <div class="pp-pricing-card-item">
+                                <div class="pp-pricing-header">
+                                    <h5>Apps métier</h5>
+                                    <h2>Applications déployées</h2>
+                                </div>
+                                <ul class="pp-pricing-list">
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Grafana, ArgoCD, Pentesting, n8n…</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Exposées en HTTPS sur le réseau Tailscale</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Sous-domaines kubesecurebox.com (Ingress)</li>
+                                    <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Mes images : build → Docker Hub → manifest GitHub → ArgoCD déploie sur le cluster.</li>
+                                </ul>
+                            </div>
+                            <div class="pricing-button">
+                                <a href="applications.html" class="pp-theme-btn">Mes applications</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-testimonial Section Start -->
+        <section id="interfaces" class="pp-testimonial-section section-padding fix">
+            <div class="container">
+                <div class="pp-section-title-area">
+                    <div class="pp-section-title">
+                        <span class="pp-sub-title wow fadeInUp">INTERFACES WEB</span>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                            Accès HTTPS via Tailscale
+                        </h2>
+                    </div>
+                </div>
+                <div class="row g-4 pp-interfaces-cards">
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".3s">
+                        <a href="application-grafana.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/grafana.jpg" alt="Grafana">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Grafana</h4>
+                                    <p>Dashboards et alerting</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".4s">
+                        <a href="application-argocd.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/argocd.jpg" alt="ArgoCD">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>ArgoCD</h4>
+                                    <p>GitOps et déploiements</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".5s">
+                        <a href="application-pentesting.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/docker_redteam_1.jpg" alt="Pentesting">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Pentesting</h4>
+                                    <p>Outils de scan</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay=".6s">
+                        <a href="application-n8n.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/n8n.jpg" alt="n8n">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>n8n</h4>
+                                    <p>Automatisation</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mt-5 pt-3 justify-content-center">
+                    <div class="col-auto">
+                        <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn pp-style-2">
+                            <i class="fab fa-github me-2"></i> Code source (GitHub)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pp-cta Section Start -->
+        <section class="pp-cta-section section-padding fix theme-bg">
+            <div class="top-shape">
+                <img src="assets/img/home-1/cta/bg.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-cta-wrapper">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="pp-cta-image">
+                                <img src="assets/img/home-1/cta/cta-1.jpg" alt="img" class="wow img-custom-anim-top" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                                <!--<div class="pp-cta-image-2">
+                                    <img src="assets/img/home-1/cta/cta-2.jpg" alt="img" class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                                </div>-->
+                                <!--<div class="pp-shape float-bob-y">
+                                    <img src="assets/img/home-1/cta/shape-1.jpg" alt="">
+                                </div>
+                                <div class="pp-shape-2 float-bob-y">
+                                    <img src="assets/img/home-1/cta/shape-2.jpg" alt="">
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pp-cta-content">
+                                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                    Découvrir les interfaces du cluster
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".5s">
+                                    Accès distant sécurisé via Tailscale : SSH local (192.168.1.x) ou distant (100.x.x.x). Interfaces web en HTTPS (Grafana, ArgoCD, Pentesting, n8n). Aucun port exposé sur Internet.
+                                </p>
+                                <div class="pp-cta-button">
+                                    <a href="#interfaces" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir les interfaces <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Pp Footer Section Start -->
+        <footer class="pp-footer-section section-bg-2">
+            <div class="top-shape">
+                <img src="assets/img/home-1/bg-shape.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-footer-widget-wrapper">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head">
+                                    <a href="index.html#hero" class="pp-footer-logo">
+                                        <img src="assets/img/logo/logo_kubernetes_negatif-removebg-preview.png" alt="KubeSecureBox" class="footer-logo-img">
+                                    </a>
+                                </div>
+                                <div class="pp-footer-content">
+                                    <p>
+                                        Cluster Raspberry Pi — GitOps, monitoring &amp; apps métier
+                                    </p>
+                                    <div class="social-icon d-flex align-items-center">
+                                        <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/alexis-metton-05666a244/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head">
+                                    <h3>Liens</h3>
+                                </div>
+                                <ul class="pp-list-area">
+                                    <li><a href="index.html#about">À propos</a></li>
+                                    <li><a href="index.html#services">Bénéfices</a></li>
+                                    <li><a href="index.html#composants">Composants</a></li>
+                                    <li><a href="index.html#interfaces">Interfaces</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head">
+                                    <h3>Interfaces</h3>
+                                </div>
+                                <ul class="pp-list-area">
+                                    <li><a href="application-grafana.html">Grafana</a></li>
+                                    <li><a href="application-argocd.html">ArgoCD</a></li>
+                                    <li><a href="application-pentesting.html">Pentesting</a></li>
+                                    <li><a href="application-n8n.html">n8n</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 ps-lg-2 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head">
+                                    <h3>Portfolio</h3>
+                                </div>
+                                <ul class="pp-list-area">
+                                    <li><a href="https://alexis.metton.com" target="_blank" rel="noopener">alexis.metton.com</a></li>
+                                    <li><a href="https://alexiss-organization-12.gitbook.io/kubesecurebox/" target="_blank" rel="noopener">GitBook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom3">
+                <div class="container">
+                    <div class="pp-footer-bottom-wrapper">
+                        <p class="wow fadeInUp" data-wow-delay=".3s">© <span class="pp-footer-brand">KubeSecureBox</span></p>
+                        <ul class="pp-footer-list wow fadeInUp" data-wow-delay=".5s">
+                            <li><a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/alexis-metton-05666a244/" target="_blank" rel="noopener">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< nice-selec Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

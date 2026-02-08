@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="KubeSecureBox">
+        <meta name="description" content="ArgoCD sur KubeSecureBox : déploiements GitOps, sync et self-heal.">
+        <title>ArgoCD – Mes applications – KubeSecureBox</title>
+        <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+
+        <div id="preloader" class="preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="K" class="letters-loading">K</span>
+                    <span data-text-preloader="S" class="letters-loading">S</span>
+                    <span data-text-preloader="B" class="letters-loading">B</span>
+                </div>
+                <p class="text-center">Chargement</p>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-left"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                    <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+                </div>
+            </div>
+        </div>
+        <button id="pp-back-top" class="pp-back-to-top show"><i class="fa-solid fa-arrow-up"></i></button>
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        <div class="fix-area">
+            <div class="offcanvas__info">
+                <div class="offcanvas__wrapper">
+                    <div class="offcanvas__content">
+                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img"></a></div>
+                            <div class="offcanvas__close"><button><i class="fas fa-times"></i></button></div>
+                        </div>
+                        <p class="text d-none d-xl-block">Cluster Kubernetes sur Raspberry Pi : K3s, monitoring (Prometheus, Grafana, Loki), GitOps avec ArgoCD, et outils de pentesting. Accès sécurisé via Tailscale.</p>
+                        <div class="mobile-menu fix mb-3"></div>
+                        <div class="offcanvas__contact">
+                            <h4>Accès</h4>
+                            <ul>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-network-wired"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://grafana.kubesecurebox.com">Grafana</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-code-branch"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://argocd.kubesecurebox.com">ArgoCD</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-shield-halved"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://pentesting.kubesecurebox.com">Pentesting</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-gears"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://automation.kubesecurebox.com">n8n</a></div></li>
+                            </ul>
+                            <div class="header-button mt-4"></div>
+                            <a href="applications.html" class="pp-theme-btn mb-3 d-inline-block"><span class="pp-text-btn">Mes applications</span></a>
+                            <a href="about.html" class="pp-theme-btn mb-3 d-inline-block"><span class="pp-text-btn">Architecture</span></a>
+                            <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn mb-3 d-inline-block"><i class="fab fa-github me-2"></i> Code source (GitHub)</a>
+                            <div class="social-icon d-flex align-items-center">
+                                <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://grafana.kubesecurebox.com" target="_blank" rel="noopener" title="Grafana"><i class="fa-solid fa-chart-line"></i></a>
+                                <a href="https://argocd.kubesecurebox.com" target="_blank" rel="noopener" title="ArgoCD"><i class="fa-solid fa-code-branch"></i></a>
+                                <a href="https://pentesting.kubesecurebox.com" target="_blank" rel="noopener" title="Pentesting"><i class="fa-solid fa-shield-halved"></i></a>
+                                <a href="https://automation.kubesecurebox.com" target="_blank" rel="noopener" title="n8n"><i class="fa-solid fa-gears"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas__overlay"></div>
+
+        <header id="header-sticky" class="header-1">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main style-1">
+                        <div class="logo">
+                            <a href="index.html#hero" class="header-logo"><img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img"></a>
+                            <a href="index.html#hero" class="header-logo-2"><img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img"></a>
+                        </div>
+                        <div class="mean__menu-wrapper">
+                            <div class="main-menu">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html#about">À propos</a></li>
+                                        <li><a href="index.html#services">Bénéfices</a></li>
+                                        <li><a href="index.html#fonctionnement">Fonctionnement</a></li>
+                                        <li><a href="index.html#composants">Composants</a></li>
+                                        <li><a href="index.html#interfaces">Interfaces</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center">
+                            <a href="applications.html" class="pp-theme-btn d-none d-xl-inline-flex me-3">Mes applications <i class="fa-solid fa-arrow-right-long"></i></a>
+                            <div class="header__hamburger d-xl-none my-auto"><div class="sidebar__toggle"><div class="header-bar style-1"><span></span><span></span></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="pp-breadcrumb-wrapper pp-hero-style fix bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb.jpg);">
+            <div class="container">
+                <div class="pp-page-heading">
+                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">ArgoCD</h1></div>
+                    <ul class="pp-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
+                        <li><i class="fa-solid fa-chevron-right"></i></li>
+                        <li><a href="applications.html">Applications</a></li>
+                        <li><i class="fa-solid fa-chevron-right"></i></li>
+                        <li>ArgoCD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <section class="pp-service-details-section section-padding">
+            <div class="container">
+                <div class="pp-service-details-wrapper">
+                    <div class="row g-5">
+                        <div class="col-12 col-lg-4">
+                            <div class="pp-main-sidebar sticky-style">
+                                <div class="pp-single-sidebar-widget">
+                                    <div class="wid-title"><h3>Toutes les applications</h3></div>
+                                    <div class="pp-service-widget-categories">
+                                        <ul>
+                                            <li><a href="application-grafana.html" class="d-flex align-items-center justify-content-between w-100">Grafana <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li class="active"><a href="application-argocd.html" class="d-flex align-items-center justify-content-between w-100">ArgoCD <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-pentesting.html" class="d-flex align-items-center justify-content-between w-100">Pentesting <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-n8n.html" class="d-flex align-items-center justify-content-between w-100">n8n <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <div class="pp-service-details-content">
+                                <div class="mb-4"><img src="assets/img/home-1/argocd.jpg" alt="ArgoCD" class="img-fluid rounded"></div>
+                                <h3>ArgoCD — Déploiements GitOps</h3>
+                                <p class="mb-4">ArgoCD est le moteur GitOps du cluster KubeSecureBox. Il synchronise l’état du cluster avec les dépôts Git définis (applications, Helm charts, manifests Kubernetes) et assure le déploiement continu.</p>
+                                <p class="mb-4">Chaque modification poussée dans les dépôts configurés peut être appliquée automatiquement ou manuellement. Les options <strong>sync auto</strong> et <strong>self-heal</strong> permettent de maintenir le cluster aligné avec la source de vérité et de corriger les dérives.</p>
+                                <h3>Accès</h3>
+                                <p class="mb-4">L’interface web est disponible en HTTPS sous <strong>argocd.kubesecurebox.com</strong>. L’accès est limité au réseau Tailscale. Vous y verrez les applications déployées, leur état de synchronisation et l’historique des déploiements.</p>
+                                <ul class="pp-details-list mb-4">
+                                    <li><i class="fa-solid fa-circle-check"></i>Sync automatique ou manuelle</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Self-heal : correction des dérives</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS via cert-manager</li>
+                                </ul>
+                                <a href="https://argocd.kubesecurebox.com" target="_blank" rel="noopener" class="pp-theme-btn">Ouvrir ArgoCD <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pp-cta Section Start -->
+        <section class="pp-cta-section section-padding fix theme-bg">
+            <div class="top-shape">
+                <img src="assets/img/home-1/cta/bg.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-cta-wrapper">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="pp-cta-image">
+                                <img src="assets/img/home-1/cta/cta-1.jpg" alt="img" class="wow img-custom-anim-top" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                                <!--<div class="pp-cta-image-2">
+                                    <img src="assets/img/home-1/cta/cta-2.jpg" alt="img" class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
+                                </div>-->
+                                <!--<div class="pp-shape float-bob-y">
+                                    <img src="assets/img/home-1/cta/shape-1.jpg" alt="">
+                                </div>
+                                <div class="pp-shape-2 float-bob-y">
+                                    <img src="assets/img/home-1/cta/shape-2.jpg" alt="">
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="pp-cta-content">
+                                <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                    Découvrir les interfaces du cluster
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay=".5s">
+                                    Accès distant sécurisé via Tailscale : SSH local (192.168.1.x) ou distant (100.x.x.x). Interfaces web en HTTPS (Grafana, ArgoCD, Pentesting, n8n). Aucun port exposé sur Internet.
+                                </p>
+                                <div class="pp-cta-button">
+                                    <a href="index.html#interfaces" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir les interfaces <i class="fa-solid fa-arrow-right-long"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="pp-footer-section section-bg-2">
+            <div class="top-shape">
+                <img src="assets/img/home-1/bg-shape.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="pp-footer-widget-wrapper">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-5 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head">
+                                    <a href="index.html#hero" class="pp-footer-logo">
+                                        <img src="assets/img/logo/logo_kubernetes_negatif-removebg-preview.png" alt="KubeSecureBox" class="footer-logo-img">
+                                    </a>
+                                </div>
+                                <div class="pp-footer-content">
+                                    <p>Cluster Raspberry Pi - GitOps, monitoring &amp; apps métier</p>
+                                    <div class="social-icon d-flex align-items-center">
+                                        <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+                                        <a href="https://www.linkedin.com/in/alexis-metton-05666a244/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head"><h3>Liens</h3></div>
+                                <ul class="pp-list-area">
+                                    <li><a href="index.html#about">À propos</a></li>
+                                    <li><a href="index.html#services">Bénéfices</a></li>
+                                    <li><a href="index.html#composants">Composants</a></li>
+                                    <li><a href="index.html#interfaces">Interfaces</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head"><h3>Interfaces</h3></div>
+                                <ul class="pp-list-area">
+                                    <li><a href="application-grafana.html">Grafana</a></li>
+                                    <li><a href="application-argocd.html">ArgoCD</a></li>
+                                    <li><a href="application-pentesting.html">Pentesting</a></li>
+                                    <li><a href="application-n8n.html">n8n</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 ps-lg-2 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="pp-footer-widget-items">
+                                <div class="pp-widget-head"><h3>Portfolio</h3></div>
+                                <ul class="pp-list-area">
+                                    <li><a href="https://alexis.metton.com" target="_blank" rel="noopener">alexis.metton.com</a></li>
+                                    <li><a href="https://alexiss-organization-12.gitbook.io/kubesecurebox/" target="_blank" rel="noopener">GitBook</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom3">
+                <div class="container">
+                    <div class="pp-footer-bottom-wrapper">
+                        <p class="wow fadeInUp" data-wow-delay=".3s">© <span class="pp-footer-brand">KubeSecureBox</span></p>
+                        <ul class="pp-footer-list wow fadeInUp" data-wow-delay=".5s">
+                            <li><a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/alexis-metton-05666a244/" target="_blank" rel="noopener">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <script src="assets/js/viewport.jquery.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/wow.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
