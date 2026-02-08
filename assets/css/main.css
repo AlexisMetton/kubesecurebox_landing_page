@@ -347,7 +347,8 @@ span {
     margin-bottom: 30px;
   }
 }
-.pp-about-wrapper .about-content .about-count-item .count-text h2 {
+.pp-about-wrapper .about-content .about-count-item .count-text h2,
+.pp-about-wrapper .about-content .about-count-item .count-text h3 {
   font-size: 40px;
 }
 
@@ -1477,7 +1478,8 @@ span {
   text-align: center;
   margin-top: 30px;
 }
-.pp-how-work-items h6 {
+.pp-how-work-items h6,
+.pp-how-work-items .pp-step-label {
   color: var(--pp-white);
   padding: 7px 16px;
   font-weight: 600;
@@ -1486,7 +1488,8 @@ span {
   margin-bottom: 20px;
   display: inline-block;
 }
-.pp-how-work-items h3 {
+.pp-how-work-items h3,
+.pp-how-work-items .pp-step-title {
   color: var(--pp-white);
   margin-bottom: 5px;
 }
@@ -2101,7 +2104,8 @@ span {
   height: auto;
   display: block;
 }
-.pp-footer-widget-wrapper .pp-footer-widget-items .pp-widget-head h3 {
+.pp-footer-widget-wrapper .pp-footer-widget-items .pp-widget-head h3,
+.pp-footer-widget-wrapper .pp-footer-widget-items .pp-widget-head h2 {
   color: var(--pp-white);
 }
 .pp-footer-widget-wrapper .pp-footer-widget-items .pp-footer-content p {
@@ -5129,11 +5133,13 @@ span {
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
-.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header h5 {
+.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header h5,
+.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header .pp-pricing-cat {
   font-weight: 600;
   margin-bottom: 10px;
 }
-.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header h2 span {
+.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header h2 span,
+.pp-pricing-main-item .pp-pricing-card-item .pp-pricing-header .pp-pricing-title span {
   font-size: 16px;
   font-weight: 400;
   color: var(--pp-text);
@@ -5870,12 +5876,14 @@ span {
 .pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title {
   margin-bottom: 25px;
 }
-.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3 {
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3,
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h2 {
   position: relative;
   padding-bottom: 15px;
   display: inline-block;
 }
-.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3::after {
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3::after,
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h2::after {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -5884,7 +5892,8 @@ span {
   content: "";
   background-color: var(--pp-theme);
 }
-.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3::before {
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h3::before,
+.pp-service-details-wrapper .pp-main-sidebar .pp-single-sidebar-widget .wid-title h2::before {
   position: absolute;
   bottom: 0;
   left: 30px;

@@ -215,7 +215,7 @@
             <div class="container custom-container-3">
                 <div class="brand-wrapper style-2">
                     <div class="brand-title wow fadeInUp" data-wow-delay=".3s">
-                        <h3>Outils &amp; technologies du cluster</h3>
+                        <h2 class="mb-0">Outils &amp; technologies du cluster</h2>
                     </div>
                     <div class="swiper pp-brand-slider">
                         <div class="swiper-wrapper">
@@ -305,15 +305,15 @@
                                 </p>
                                 <div class="about-count-item wow fadeInUp" data-wow-delay=".3s">
                                     <div class="count-text">
-                                        <h2><span class="pp-count">1</span></h2>
+                                        <h3 class="mb-0"><span class="pp-count">1</span></h3>
                                         <p>Pi 4 Control Plane</p>
                                     </div>
                                     <div class="count-text">
-                                        <h2><span class="pp-count">2</span></h2>
+                                        <h3 class="mb-0"><span class="pp-count">2</span></h3>
                                         <p>Pi 5 Workers</p>
                                     </div>
                                     <div class="count-text">
-                                        <h2><span class="pp-count">4</span></h2>
+                                        <h3 class="mb-0"><span class="pp-count">4</span></h3>
                                         <p>To stockage NFS</p>
                                     </div>
                                 </div>
@@ -402,8 +402,8 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
                         <div class="pp-how-work-items">
-                            <h6>ÉTAPE 01</h6>
-                            <h3>Manifestes Git → ArgoCD</h3>
+                            <h3 class="pp-step-label">ÉTAPE 01</h3>
+                            <h4 class="pp-step-title">Manifestes Git → ArgoCD</h4>
                             <p>
                                 Repo GitHub (YAML, Kustomize, Helm). ArgoCD synchronise et applique la config dans le cluster Kubernetes (K3s).
                             </p>
@@ -411,8 +411,8 @@
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="pp-how-work-items pp-style-2">
-                            <h6>ÉTAPE 02</h6>
-                            <h3>Métriques &amp; logs</h3>
+                            <h3 class="pp-step-label">ÉTAPE 02</h3>
+                            <h4 class="pp-step-title">Métriques &amp; logs</h4>
                             <p>
                                 Prometheus scrape les métriques, Promtail envoie les logs vers Loki. Grafana pour visualisation et alerting Discord.
                             </p>
@@ -420,8 +420,8 @@
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
                         <div class="pp-how-work-items">
-                            <h6>ÉTAPE 03</h6>
-                            <h3>Apps métier</h3>
+                            <h3 class="pp-step-label">ÉTAPE 03</h3>
+                            <h4 class="pp-step-title">Apps métier</h4>
                             <p>
                                 Déployées sur le cluster et exposées uniquement sur le réseau Tailscale. Chaque service est accessible en HTTPS via un Ingress, sur un sous-domaine de kubesecurebox.com.
                             </p>
@@ -534,8 +534,8 @@
                         <div class="pp-pricing-main-item">
                             <div class="pp-pricing-card-item">
                                 <div class="pp-pricing-header">
-                                    <h5>Infrastructure</h5>
-                                    <h2>Hardware &amp; déploiement</h2>
+                                    <h3 class="pp-pricing-cat">Infrastructure</h3>
+                                    <h4 class="pp-pricing-title">Hardware &amp; déploiement</h4>
                                 </div>
                                 <ul class="pp-pricing-list">
                                     <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Stack open source, sans dépendance cloud</li>
@@ -553,8 +553,8 @@
                         <div class="pp-pricing-main-item">
                             <div class="pp-pricing-card-item">
                                 <div class="pp-pricing-header">
-                                    <h5>Monitoring</h5>
-                                    <h2>Observabilité &amp; réactivité</h2>
+                                    <h3 class="pp-pricing-cat">Monitoring</h3>
+                                    <h4 class="pp-pricing-title">Observabilité &amp; réactivité</h4>
                                 </div>
                                 <ul class="pp-pricing-list">
                                     <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Métriques et logs centralisés (Prometheus, Loki)</li>
@@ -572,8 +572,8 @@
                         <div class="pp-pricing-main-item">
                             <div class="pp-pricing-card-item">
                                 <div class="pp-pricing-header">
-                                    <h5>Apps métier</h5>
-                                    <h2>Applications déployées</h2>
+                                    <h3 class="pp-pricing-cat">Apps métier</h3>
+                                    <h4 class="pp-pricing-title">Applications déployées</h4>
                                 </div>
                                 <ul class="pp-pricing-list">
                                     <li><img src="assets/img/home-1/icon/cheak.svg" alt="img"> Grafana, ArgoCD, Pentesting, n8n…</li>
