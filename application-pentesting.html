@@ -42,35 +42,26 @@
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
+        <!-- Offcanvas (menu mobile) -->
         <div class="fix-area">
             <div class="offcanvas__info">
                 <div class="offcanvas__wrapper">
                     <div class="offcanvas__content">
-                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                            <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img"></a></div>
+                        <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                            <div class="offcanvas__logo"><a href="index.html"><img src="assets/img/logo/logo_kubesecurebox.png" alt="logo-img" class="offcanvas__logo-img"></a></div>
                             <div class="offcanvas__close"><button><i class="fas fa-times"></i></button></div>
                         </div>
-                        <p class="text d-none d-xl-block">Cluster Kubernetes sur Raspberry Pi : K3s, monitoring (Prometheus, Grafana, Loki), GitOps avec ArgoCD, et outils de pentesting. Accès sécurisé via Tailscale.</p>
                         <div class="mobile-menu fix mb-3"></div>
                         <div class="offcanvas__contact">
-                            <h4>Accès</h4>
+                            <h4>Accès interfaces</h4>
                             <ul>
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon"><i class="fal fa-network-wired"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://grafana.kubesecurebox.com">Grafana</a></div></li>
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-code-branch"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://argocd.kubesecurebox.com">ArgoCD</a></div></li>
-                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-shield-halved"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://pentesting.kubesecurebox.com">Pentesting</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-bug"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://pentesting.kubesecurebox.com">Pentesting</a></div></li>
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-gears"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://automation.kubesecurebox.com">n8n</a></div></li>
                             </ul>
                             <div class="header-button mt-4"></div>
-                            <a href="applications.html" class="pp-theme-btn mb-3 d-inline-block"><span class="pp-text-btn">Mes applications</span></a>
-                            <a href="index.html#about" class="pp-theme-btn mb-3 d-inline-block"><span class="pp-text-btn">Architecture</span></a>
-                            <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn mb-3 d-inline-block"><i class="fab fa-github me-2"></i> Code source (GitHub)</a>
-                            <div class="social-icon d-flex align-items-center">
-                                <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-                                <a href="https://grafana.kubesecurebox.com" target="_blank" rel="noopener" title="Grafana"><i class="fa-solid fa-chart-line"></i></a>
-                                <a href="https://argocd.kubesecurebox.com" target="_blank" rel="noopener" title="ArgoCD"><i class="fa-solid fa-code-branch"></i></a>
-                                <a href="https://pentesting.kubesecurebox.com" target="_blank" rel="noopener" title="Pentesting"><i class="fa-solid fa-shield-halved"></i></a>
-                                <a href="https://automation.kubesecurebox.com" target="_blank" rel="noopener" title="n8n"><i class="fa-solid fa-gears"></i></a>
-                            </div>
+                            <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn d-inline-block"><i class="fab fa-github me-2"></i> Code source (GitHub)</a>
                         </div>
                     </div>
                 </div>
@@ -187,13 +178,13 @@
                         <div class="col-lg-6">
                             <div class="pp-cta-content">
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                    Découvrir les interfaces du cluster
+                                    L’intégralité du projet sur GitHub
                                 </h2>
                                 <p class="wow fadeInUp" data-wow-delay=".5s">
-                                    Accès distant sécurisé via Tailscale : SSH local (192.168.1.x) ou distant (100.x.x.x). Interfaces web en HTTPS (Grafana, ArgoCD, Pentesting, n8n). Aucun port exposé sur Internet.
+                                    L’ensemble du projet KubeSecureBox est disponible sur GitHub. Les dépôts liés à ce projet sont préfixés par « kubesecurebox_ ».
                                 </p>
                                 <div class="pp-cta-button">
-                                    <a href="index.html#interfaces" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir les interfaces <i class="fa-solid fa-arrow-right-long"></i></a>
+                                    <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir sur GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
                                 </div>
                             </div>
                         </div>

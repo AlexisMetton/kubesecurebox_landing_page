@@ -657,8 +657,29 @@
 			}
 		}
 
+		.offcanvas__logo-img {
+			max-width: 120px;
+			height: auto;
+			display: block;
+		}
+
 		.offcanvas__contact {
 			margin-top: 20px;
+
+			h4 {
+				font-size: 14px;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: $pp-theme-color;
+				margin-bottom: 10px;
+				font-weight: 600;
+			}
+
+			.offcanvas__nav {
+				list-style: none;
+				padding-left: 0;
+				margin-top: 0;
+			}
 
 			ul {
 				margin-top: 20px;

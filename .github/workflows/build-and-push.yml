@@ -35,3 +35,24 @@ jobs:
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:sha-${{ steps.sha.outputs.short_sha }}
+
+      - name: Update GitOps repo with new image tag
+        env:
+          SHORT_SHA: ${{ steps.sha.outputs.short_sha }}
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
+        run: |
+          set -e
+          git clone --depth 1 https://x-access-token:${GITOPS_TOKEN}@github.com/AlexisMetton/kubesecurebox_gitops.git gitops
+          cd gitops
+          sed -i.bak "s|image: ${DOCKERHUB_USERNAME}/kubesecurebox-site:.*|image: ${DOCKERHUB_USERNAME}/kubesecurebox-site:sha-${SHORT_SHA}|" apps/website/deployment.yaml
+          rm -f apps/website/deployment.yaml.bak
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add apps/website/deployment.yaml
+          if git diff --staged --quiet; then
+            echo "No change in deployment image tag."
+          else
+            git commit -m "chore(website): update image to sha-${SHORT_SHA}"
+            git push origin main
+          fi

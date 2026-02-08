@@ -12,7 +12,7 @@
     
     $('#mobile-menu').meanmenu({
         meanMenuContainer: '.mobile-menu',
-        meanScreenWidth: "1199",
+        meanScreenWidth: "1340",
         meanExpand: ['<i class="far fa-plus"></i>'],
     });
     
@@ -98,7 +98,7 @@
     ================================ */
     if ($('.pp-brand-slider').length > 0) {
       const ppBrandSlider = new Swiper(".pp-brand-slider", {
-        spaceBetween: 100,
+        spaceBetween: 24,
         speed: 2000,
         loop: true,
         autoplay: {
@@ -108,18 +108,23 @@
         breakpoints: {
           1199: {
             slidesPerView: 5,
+            spaceBetween: 28,
           },
           991: {
             slidesPerView: 4,
+            spaceBetween: 24,
           },
           767: {
             slidesPerView: 3,
+            spaceBetween: 20,
           },
           575: {
             slidesPerView: 2,
+            spaceBetween: 16,
           },
           0: {
-            slidesPerView: 1,
+            slidesPerView: 2,
+            spaceBetween: 12,
           },
         },
       });
