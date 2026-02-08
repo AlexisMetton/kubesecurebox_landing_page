@@ -348,7 +348,7 @@
     ================================ */
 
     $windowOn.on('scroll', function() {
-        if ($(this).scrollTop() > 20) {
+        if ($(this).scrollTop() > 100) {
             $("#pp-back-top").addClass("show");
         } else {
             $("#pp-back-top").removeClass("show");
