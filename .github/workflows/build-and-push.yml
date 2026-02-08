@@ -32,6 +32,8 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
+          build-args: |
+            BUILD_SHA=${{ steps.sha.outputs.short_sha }}
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:sha-${{ steps.sha.outputs.short_sha }}
