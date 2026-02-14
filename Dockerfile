@@ -6,3 +6,7 @@ RUN cd /usr/share/nginx/html && for f in *.html; do \
   sed -i "s|\.js\"|.js?v=${BUILD_SHA}\"|g" "$f"; \
 done
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Run as non-root user (listen on 8080, not 80)
+USER nginx
+EXPOSE 8080
