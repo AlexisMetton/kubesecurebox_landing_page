@@ -7,7 +7,7 @@ RUN cd /usr/share/nginx/html && for f in *.html; do \
 done
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-RUN chown -R nginx:nginx /var/cache/nginx /var/lib/nginx /usr/share/nginx/html
+RUN mkdir -p /var/lib/nginx && chown -R nginx:nginx /var/cache/nginx /var/lib/nginx /usr/share/nginx/html
 
 # Run as non-root user (listen on 8080, not 80)
 USER nginx
