@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="KubeSecureBox">
-        <meta name="description" content="Matomo sur KubeSecureBox : statistiques et analytics pour les sites kubesecurebox et alexismetton.">
-        <title>Matomo – Mes applications – KubeSecureBox</title>
+        <meta name="description" content="Portainer sur KubeSecureBox : gestion du cluster Kubernetes (namespaces, applications, pods, logs, exec).">
+        <title>Portainer – Mes applications – KubeSecureBox</title>
         <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/all.min.css">
@@ -77,6 +77,8 @@
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-gears"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://automation.kubesecurebox.com">n8n</a></div></li>
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-briefcase"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://alexismetton.com">Portfolio</a></div></li>
                                 <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-chart-bar"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://matomo.kubesecurebox.com">Matomo</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-database"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://phpmyadmin.kubesecurebox.com">phpMyAdmin</a></div></li>
+                                <li class="d-flex align-items-center"><div class="offcanvas__contact-icon mr-15"><i class="fal fa-cubes"></i></div><div class="offcanvas__contact-text"><a target="_blank" href="https://portainer.kubesecurebox.com">Portainer</a></div></li>
                             </ul>
                             <div class="header-button mt-4"></div>
                             <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn d-inline-block"><i class="fab fa-github me-2"></i> Code source (GitHub)</a>
@@ -120,12 +122,12 @@
         <div class="pp-breadcrumb-wrapper pp-hero-style fix bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb.jpg);">
             <div class="container">
                 <div class="pp-page-heading">
-                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">Matomo</h1></div>
+                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">Portainer</h1></div>
                     <ul class="pp-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                         <li><i class="fa-solid fa-chevron-right"></i></li>
                         <li><a href="applications.html">Applications</a></li>
                         <li><i class="fa-solid fa-chevron-right"></i></li>
-                        <li>Matomo</li>
+                        <li>Portainer</li>
                     </ul>
                 </div>
             </div>
@@ -141,10 +143,10 @@
                                     <div class="wid-title"><h2>Voir aussi</h2></div>
                                     <div class="pp-service-widget-categories">
                                         <ul>
-                                            <li class="active"><a href="application-matomo.html" class="d-flex align-items-center justify-content-between w-100">Matomo <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-phpmyadmin.html" class="d-flex align-items-center justify-content-between w-100">phpMyAdmin <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-portfolio.html" class="d-flex align-items-center justify-content-between w-100">Portfolio <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li class="active"><a href="application-portainer.html" class="d-flex align-items-center justify-content-between w-100">Portainer <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-argocd.html" class="d-flex align-items-center justify-content-between w-100">ArgoCD <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                             <li><a href="application-grafana.html" class="d-flex align-items-center justify-content-between w-100">Grafana <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-phpmyadmin.html" class="d-flex align-items-center justify-content-between w-100">phpMyAdmin <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -152,18 +154,18 @@
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="pp-service-details-content">
-                                <div class="mb-4"><img src="assets/img/home-1/matomo.png" alt="Matomo" class="img-fluid rounded"></div>
-                                <h3>Matomo — Analytics et statistiques</h3>
-                                <p class="mb-4">Matomo est une plateforme d'analyse web open source qui collecte et analyse les statistiques de visite de mes sites web. Elle offre une alternative respectueuse de la vie privée aux solutions d'analytics traditionnelles.</p>
-                                <p class="mb-4">Matomo récupère et analyse les statistiques de deux sites : <strong>kubesecurebox.com</strong> (ce site de présentation du cluster) et <strong>alexismetton.com</strong> (mon portfolio personnel). Les données sont hébergées de manière privée sur le cluster KubeSecureBox, garantissant le contrôle total sur les données d'analyse.</p>
+                                <div class="mb-4"><img src="assets/img/home-1/portainer.png" alt="Portainer" class="img-fluid rounded"></div>
+                                <h3>Portainer — Gestion du cluster Kubernetes</h3>
+                                <p class="mb-4">Portainer (Community Edition) est l'interface web pour gérer le cluster Kubernetes du KubeSecureBox. Depuis le tableau de bord, vous avez accès aux namespaces, applications, services, ingress, ConfigMaps, Secrets et volumes, ainsi qu'à un shell kubectl intégré.</p>
+                                <p class="mb-4">Vous pouvez consulter les ressources, voir les logs des pods, lancer un exec dans un conteneur, et gérer les déploiements. Au premier accès, il faut créer le compte administrateur Portainer.</p>
                                 <h3>Accès</h3>
-                                <p class="mb-4">L'interface Matomo est exposée en HTTPS via Ingress sous le domaine <strong>matomo.kubesecurebox.com</strong>. L'accès est public sur Internet.</p>
+                                <p class="mb-4">L'interface est exposée en HTTPS sous le domaine <strong>portainer.kubesecurebox.com</strong>. Premier accès : création du mot de passe admin. L’accès est réservé au réseau Tailscale.</p>
                                 <ul class="pp-details-list mb-4">
-                                    <li><i class="fa-solid fa-circle-check"></i>Statistiques pour kubesecurebox.com et alexismetton.com</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>Analytics respectueux de la vie privée</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS via cert-manager</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Dashboard, namespaces, applications, services, ingress</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>ConfigMaps, Secrets, Volumes</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>kubectl shell et gestion du cluster</li>
                                 </ul>
-                                <a href="https://matomo.kubesecurebox.com" target="_blank" rel="noopener" class="pp-theme-btn">Ouvrir Matomo <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <a href="https://portainer.kubesecurebox.com" target="_blank" rel="noopener" class="pp-theme-btn">Ouvrir Portainer <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
