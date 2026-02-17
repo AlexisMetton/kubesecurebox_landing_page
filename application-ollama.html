@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="KubeSecureBox">
-        <meta name="description" content="Grafana sur KubeSecureBox : dashboards Prometheus et Loki, alerting Discord.">
-        <title>Grafana – Mes applications – KubeSecureBox</title>
+        <meta name="description" content="Ollama sur KubeSecureBox : modèle IA local Llama 3 2B pour OpenClaw et autres applications.">
+        <title>Ollama – Mes applications – KubeSecureBox</title>
         <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/all.min.css">
@@ -124,12 +124,12 @@
         <div class="pp-breadcrumb-wrapper pp-hero-style fix bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb.jpg);">
             <div class="container">
                 <div class="pp-page-heading">
-                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">Grafana</h1></div>
+                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">Ollama</h1></div>
                     <ul class="pp-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                         <li><i class="fa-solid fa-chevron-right"></i></li>
                         <li><a href="applications.html">Applications</a></li>
                         <li><i class="fa-solid fa-chevron-right"></i></li>
-                        <li>Grafana</li>
+                        <li>Ollama</li>
                     </ul>
                 </div>
             </div>
@@ -145,10 +145,10 @@
                                     <div class="wid-title"><h2>Voir aussi</h2></div>
                                     <div class="pp-service-widget-categories">
                                         <ul>
-                                            <li class="active"><a href="application-grafana.html" class="d-flex align-items-center justify-content-between w-100">Grafana <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-argocd.html" class="d-flex align-items-center justify-content-between w-100">ArgoCD <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li class="active"><a href="application-ollama.html" class="d-flex align-items-center justify-content-between w-100">Ollama <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-openclaw.html" class="d-flex align-items-center justify-content-between w-100">OpenClaw <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-grafana.html" class="d-flex align-items-center justify-content-between w-100">Grafana <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                             <li><a href="application-portainer.html" class="d-flex align-items-center justify-content-between w-100">Portainer <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-matomo.html" class="d-flex align-items-center justify-content-between w-100">Matomo <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -156,18 +156,21 @@
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="pp-service-details-content">
-                                <div class="mb-4"><img src="assets/img/home-1/grafana.jpg" alt="Grafana" class="img-fluid rounded"></div>
-                                <h3>Grafana — Dashboards et alerting</h3>
-                                <p class="mb-4">Grafana est l’interface de visualisation et d’alerting du cluster KubeSecureBox. Elle s’appuie sur Prometheus (métriques) et Loki (logs) pour fournir des tableaux de bord et des alertes en temps réel.</p>
-                                <p class="mb-4">Vous y trouverez notamment le dashboard <strong>KubeSecureBox Overview</strong>, les vues par nœud (CPU, RAM, disque, température), le <strong>Node Summary</strong> et l’exploration des logs Loki. Les alertes (nœud down, NotReady, seuils RAM/CPU/disque, température, load) sont envoyées vers Discord via le contact point configuré.</p>
+                                <div class="mb-4"><img src="assets/img/home-1/ollama.jpg" alt="Ollama" class="img-fluid rounded"></div>
+                                <h3>Ollama — Modèle IA local</h3>
+                                <p class="mb-4">Ollama est un serveur de modèles IA open source qui permet d'exécuter des modèles de langage localement sur le cluster. Sur KubeSecureBox, Ollama héberge le modèle <strong>Llama 3.2 1B</strong>, un modèle léger adapté aux ressources limitées des Raspberry Pi 8GB.</p>
+                                <p class="mb-4">Le modèle est utilisé par <strong>OpenClaw</strong> pour générer des réponses IA. Ollama fournit une API compatible OpenAI, permettant à OpenClaw de communiquer avec le modèle via HTTP. Les modèles téléchargés sont stockés dans un volume persistant pour éviter de les retélécharger à chaque redémarrage.</p>
+                                <h3>Modèle Llama 3.2 1B</h3>
+                                <p class="mb-4">Le modèle <strong>Llama 3.2 1B</strong> est un modèle de langage léger (~1.3GB) optimisé pour les environnements avec ressources limitées. Il offre un bon compromis entre qualité des réponses et consommation mémoire, parfait pour un cluster Raspberry Pi.</p>
                                 <h3>Accès</h3>
-                                <p class="mb-4">L’interface est exposée en HTTPS via Ingress sous le domaine <strong>grafana.kubesecurebox.com</strong>. L’accès est réservé au réseau Tailscale ; aucun port n’est exposé sur Internet.</p>
+                                <p class="mb-4">Ollama expose une API REST sur le port <strong>11434</strong> accessible uniquement depuis le cluster (Service ClusterIP). L'API est utilisée par OpenClaw pour générer les réponses IA. L'accès est réservé au réseau Tailscale.</p>
                                 <ul class="pp-details-list mb-4">
-                                    <li><i class="fa-solid fa-circle-check"></i>Datasources : Prometheus, Loki</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>Règles d’alerting : groupe <em>kubesecurebox-infra</em></li>
-                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS via cert-manager</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Modèle Llama 3.2 1B (~1.3GB, léger)</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>API compatible OpenAI</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Utilisé par OpenClaw pour les réponses IA</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Stockage persistant des modèles</li>
                                 </ul>
-                                <a href="https://grafana.kubesecurebox.com" target="_blank" rel="noopener" class="pp-theme-btn">Ouvrir Grafana <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <a href="https://ollama.kubesecurebox.com" target="_blank" rel="noopener" class="pp-theme-btn">Ouvrir Ollama <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
@@ -186,24 +189,15 @@
                         <div class="col-lg-6">
                             <div class="pp-cta-image">
                                 <img src="assets/img/home-1/cta/cta-1.jpg" alt="img" class="wow img-custom-anim-top" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                <!--<div class="pp-cta-image-2">
-                                    <img src="assets/img/home-1/cta/cta-2.jpg" alt="img" class="wow img-custom-anim-right" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                </div>-->
-                                <!--<div class="pp-shape float-bob-y">
-                                    <img src="assets/img/home-1/cta/shape-1.jpg" alt="">
-                                </div>
-                                <div class="pp-shape-2 float-bob-y">
-                                    <img src="assets/img/home-1/cta/shape-2.jpg" alt="">
-                                </div>-->
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="pp-cta-content">
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                    L’intégralité du projet sur GitHub
+                                    L'intégralité du projet sur GitHub
                                 </h2>
                                 <p class="wow fadeInUp" data-wow-delay=".5s">
-                                    L’ensemble du projet KubeSecureBox est disponible sur GitHub. Les dépôts liés à ce projet sont préfixés par « kubesecurebox_ ».
+                                    L'ensemble du projet KubeSecureBox est disponible sur GitHub. Les dépôts liés à ce projet sont préfixés par « kubesecurebox_ ».
                                 </p>
                                 <div class="pp-cta-button">
                                     <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir sur GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
