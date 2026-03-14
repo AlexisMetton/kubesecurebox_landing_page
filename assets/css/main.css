@@ -3704,6 +3704,14 @@ span {
     margin: 0 15px;
   }
 }
+@media (max-width: 991px) {
+  .pp-hero-1 .top-shape {
+    display: none;
+  }
+  .pp-hero-1 .pp-hero-image {
+    display: none;
+  }
+}
 .pp-hero-1::before {
   position: absolute;
   top: 0;

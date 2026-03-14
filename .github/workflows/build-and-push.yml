@@ -7,8 +7,22 @@ on:
       - master
 
 jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
   build-and-push:
     runs-on: ubuntu-latest
+    outputs:
+      short_sha: ${{ steps.sha.outputs.short_sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -38,9 +52,39 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:sha-${{ steps.sha.outputs.short_sha }}
 
+  trivy-image-scan:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/kubesecurebox-site:sha-${{ needs.build-and-push.outputs.short_sha }}
+          format: sarif
+          output: trivy-results.sarif
+          severity: CRITICAL,HIGH
+          exit-code: "1"
+
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: trivy-results.sarif
+          category: trivy-image
+
+  update-gitops:
+    needs: [build-and-push, trivy-image-scan]
+    runs-on: ubuntu-latest
+    steps:
       - name: Update GitOps repo with new image tag
         env:
-          SHORT_SHA: ${{ steps.sha.outputs.short_sha }}
+          SHORT_SHA: ${{ needs.build-and-push.outputs.short_sha }}
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           GITOPS_TOKEN: ${{ secrets.GITOPS_TOKEN }}
         run: |
