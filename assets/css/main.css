@@ -1551,7 +1551,8 @@ span {
   position: relative;
 }
 @media (max-width: 991px) {
-  .pp-key-feature-wrapper .pp-key-feature-image {
+  .pp-key-feature-wrapper .pp-key-feature-image .pp-key-feature-image-2,
+  .pp-key-feature-wrapper .pp-key-feature-image .pp-key-feature-image-3 {
     display: none;
   }
 }
