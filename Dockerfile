@@ -1,4 +1,5 @@
-FROM nginx:alpine
+# Image épinglée pour reproductibilité et moindre surface d’attaque (Trivy)
+FROM nginx:1.27-alpine
 ARG BUILD_SHA=latest
 COPY . /usr/share/nginx/html
 RUN cd /usr/share/nginx/html && for f in *.html; do \
