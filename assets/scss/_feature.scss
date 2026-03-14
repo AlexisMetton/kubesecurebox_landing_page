@@ -118,6 +118,10 @@
         max-width: 424px;
         position: relative;
 
+        @include breakpoint (max-lg) {
+            display: none;
+        }
+
          @include breakpoint (max-xl) {
              max-width: initial;
          }

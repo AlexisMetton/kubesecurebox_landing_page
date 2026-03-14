@@ -1550,6 +1550,11 @@ span {
   max-width: 424px;
   position: relative;
 }
+@media (max-width: 991px) {
+  .pp-key-feature-wrapper .pp-key-feature-image {
+    display: none;
+  }
+}
 @media (max-width: 1199px) {
   .pp-key-feature-wrapper .pp-key-feature-image {
     max-width: initial;
@@ -3706,9 +3711,6 @@ span {
 }
 @media (max-width: 991px) {
   .pp-hero-1 .top-shape {
-    display: none;
-  }
-  .pp-hero-1 .pp-hero-image {
     display: none;
   }
 }

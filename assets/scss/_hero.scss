@@ -91,10 +91,6 @@
      }
 
      .pp-hero-image {
-        @include breakpoint (max-lg) {
-            display: none;
-        }
-
         img {
             @include imgw;
             border-radius: 24px;
