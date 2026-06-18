@@ -6470,6 +6470,18 @@ span {
   color: #A121CA;
 }
 
+.pp-interfaces-cards .pp-interface-item-hidden {
+  display: none;
+}
+
+.pp-interfaces-more-wrap {
+  margin-top: 8px;
+}
+
+.pp-interfaces-more-wrap.is-hidden {
+  display: none;
+}
+
 .pp-testimonial-item-2 {
   text-align: center;
 }

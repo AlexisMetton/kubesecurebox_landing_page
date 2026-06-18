@@ -365,6 +365,28 @@
         return false;
     });
 
+    /* ================================
+       Interfaces Load More Js Start
+    ================================ */
+    const $interfacesLoadMore = $('#pp-interfaces-load-more');
+    if ($interfacesLoadMore.length) {
+      const interfacesBatchSize = 6;
+
+      const updateInterfacesLoadMore = function() {
+        const $hiddenItems = $('.pp-interfaces-cards .pp-interface-item-hidden');
+        if ($hiddenItems.length === 0) {
+          $interfacesLoadMore.closest('.pp-interfaces-more-wrap').addClass('is-hidden');
+        }
+      };
+
+      $interfacesLoadMore.on('click', function() {
+        const $hiddenItems = $('.pp-interfaces-cards .pp-interface-item-hidden');
+        $hiddenItems.slice(0, interfacesBatchSize).removeClass('pp-interface-item-hidden');
+        updateInterfacesLoadMore();
+      });
+
+      updateInterfacesLoadMore();
+    }
 
 
     
