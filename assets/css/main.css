@@ -166,6 +166,10 @@ h6 {
   text-transform: capitalize;
 }
 
+.pp-preserve-case {
+  text-transform: none !important;
+}
+
 h1 {
   font-size: 64px;
   font-weight: 800;
