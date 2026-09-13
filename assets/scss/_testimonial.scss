@@ -143,3 +143,174 @@
         }
     }
 }
+
+// Section INTERFACES WEB : cartes avec visuel, 3 par ligne
+.pp-testimonial-section {
+    &#interfaces {
+        background-color: $pp-white;
+        position: relative;
+        z-index: 10;
+        overflow: visible;
+
+        .container {
+            overflow: visible;
+        }
+    }
+
+    .pp-interface-card-link {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        height: 100%;
+
+        &:hover {
+            color: inherit;
+
+            .pp-interface-card {
+                box-shadow: 0 8px 24px rgba(123, 31, 228, 0.12);
+                border-color: rgba(123, 31, 228, 0.25);
+            }
+
+            .pp-interface-card-img img {
+                transform: scale(1.05);
+            }
+
+            .pp-interface-card-body .pp-interface-link {
+                color: #A121CA;
+            }
+        }
+    }
+
+    .pp-interface-card {
+        background: var(--pp-bg, #FAFAFA);
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid var(--pp-border, rgba(204, 203, 209, 0.24));
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pp-interface-card-img {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #eee;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    .pp-interface-card-body {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--pp-header, #1a1a1a);
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: var(--pp-text, #6D6B7B);
+            margin-bottom: 12px;
+            flex: 1;
+        }
+
+        .pp-interface-link {
+            color: var(--pp-theme, #7B1FE4);
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+    }
+
+    .pp-interfaces-cards {
+        min-height: 0;
+        align-content: flex-start;
+        overflow: visible;
+
+        .pp-interface-item {
+            min-width: 0;
+        }
+    }
+
+    @include breakpoint (max-lg) {
+        &#interfaces .pp-interfaces-cards {
+            --bs-gutter-x: 1rem;
+            --bs-gutter-y: 1rem;
+        }
+    }
+
+    @include breakpoint (max-sm) {
+        &#interfaces.section-padding {
+            padding-top: 40px;
+            padding-bottom: 48px;
+        }
+
+        .pp-interfaces-cards {
+            --bs-gutter-y: 0.85rem;
+        }
+
+        .pp-interface-card-body {
+            padding: 14px 14px 16px;
+
+            h4 {
+                font-size: 1.1rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+            }
+        }
+
+        .pp-section-title-area {
+            margin-bottom: 28px !important;
+        }
+
+        .pp-interfaces-more-wrap {
+            margin-top: 1rem;
+        }
+    }
+
+    @include breakpoint (max-md) {
+        .pp-interfaces-more-wrap {
+            margin-top: 1.25rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+}
+
+.pp-interfaces-cards .pp-interface-item.pp-interface-item-hidden {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.pp-interfaces-hidden-stash {
+    display: none !important;
+}
+
+.pp-interfaces-more-wrap {
+    margin-top: 1.5rem;
+
+    &.is-hidden {
+        display: none;
+    }
+}

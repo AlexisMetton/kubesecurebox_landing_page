@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="KubeSecureBox">
-        <meta name="description" content="KubeSecureBox – Interfaces : Grafana, ArgoCD, Pentesting, n8n, Resh. Accès HTTPS au cluster.">
+        <meta name="description" content="KubeSecureBox – Interfaces : Grafana, ArgoCD, Resh, MCP Hub, Stock Analyzer, Pentesting, n8n et plus.">
         <!-- ======== Page title ============ -->
         <title>Mes applications – KubeSecureBox</title>
         <!--<< Favcion >>-->
@@ -182,9 +182,9 @@
                 <div class="pp-section-title text-center">
                     <span class="pp-sub-title pp-style-border wow fadeInUp">Interfaces</span>
                     <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                        Accès web HTTPS
+                        Apps du cluster
                     </h2>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">Toutes les interfaces exposées sur le cluster KubeSecureBox. Accès réservé au réseau Tailscale.</p>
+                    <p class="wow fadeInUp" data-wow-delay=".5s">Interfaces déployées sur KubeSecureBox — accès public, Tailscale ou Zero Trust selon l’app.</p>
                 </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
@@ -194,12 +194,8 @@
                                 <span>Monitoring</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-grafana.html">Grafana — Dashboards et alerting</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-chart-line"></i> Prometheus, Loki</li>
-                                </ul>
+                                <h3><a href="application-grafana.html">Grafana — Dashboards et alerting</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-chart-line"></i> Prometheus, Loki</li></ul>
                                 <a href="application-grafana.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -211,12 +207,8 @@
                                 <span>GitOps</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-argocd.html">ArgoCD — Déploiements GitOps</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-code-branch"></i> Sync auto, self-heal</li>
-                                </ul>
+                                <h3><a href="application-argocd.html">ArgoCD — Déploiements GitOps</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-code-branch"></i> Sync auto, self-heal</li></ul>
                                 <a href="application-argocd.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -224,34 +216,26 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/docker_redteam_1.jpg" alt="Pentesting">
-                                <span>Pentesting</span>
+                                <img src="assets/img/home-1/portainer.png" alt="Portainer">
+                                <span>Cluster</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-pentesting.html">Pentesting — Outils de scan</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-magnifying-glass"></i> Nmap, SQLMap, Hydra… et bien d'autres</li>
-                                </ul>
-                                <a href="application-pentesting.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-portainer.html">Portainer — Gestion du cluster</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-cubes"></i> Namespaces, pods, logs, exec</li></ul>
+                                <a href="application-portainer.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/n8n.jpg" alt="n8n">
-                                <span>Automation</span>
+                                <img src="assets/img/home-1/phpmyadmin.png" alt="phpMyAdmin">
+                                <span>Base de données</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-n8n.html"><span class="pp-preserve-case">n8n</span> — Automatisation de workflows</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-gears"></i> Workflows, intégrations</li>
-                                </ul>
-                                <a href="application-n8n.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-phpmyadmin.html">phpMyAdmin — Administration MySQL</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-database"></i> MySQL (Matomo, etc.)</li></ul>
+                                <a href="application-phpmyadmin.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
@@ -262,12 +246,8 @@
                                 <span>Portfolio</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-portfolio.html">Portfolio — Site web personnel</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-briefcase"></i> CI/CD, déploiement automatisé</li>
-                                </ul>
+                                <h3><a href="application-portfolio.html">Portfolio — Site web personnel</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-briefcase"></i> CI/CD, déploiement automatisé</li></ul>
                                 <a href="application-portfolio.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -279,12 +259,8 @@
                                 <span>Analytics</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-matomo.html">Matomo — Analytics et statistiques</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-chart-bar"></i> Stats kubesecurebox &amp; alexismetton</li>
-                                </ul>
+                                <h3><a href="application-matomo.html">Matomo — Analytics et statistiques</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-chart-bar"></i> Stats kubesecurebox &amp; alexismetton</li></ul>
                                 <a href="application-matomo.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
@@ -292,85 +268,91 @@
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/phpmyadmin.png" alt="phpMyAdmin">
-                                <span>Base de données</span>
+                                <img src="assets/img/home-1/n8n.jpg" alt="n8n">
+                                <span>Automation</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-phpmyadmin.html">phpMyAdmin — Administration MySQL</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-database"></i> MySQL (Matomo, etc.)</li>
-                                </ul>
-                                <a href="application-phpmyadmin.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-n8n.html"><span class="pp-preserve-case">n8n</span> — Automatisation de workflows</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-gears"></i> Workflows, intégrations</li></ul>
+                                <a href="application-n8n.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".9s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/portainer.png" alt="Portainer">
-                                <span>Cluster</span>
+                                <img src="assets/img/home-1/resh.jpg" alt="Resh">
+                                <span>IA</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-portainer.html">Portainer — Gestion du cluster</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-cubes"></i> Namespaces, pods, logs, exec</li>
-                                </ul>
-                                <a href="application-portainer.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-resh.html">Resh — Second cerveau RAG</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-brain"></i> Obsidian, Drive, Telegram</li></ul>
+                                <a href="application-resh.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/openclaw.png" alt="OpenClaw">
+                                <img src="assets/img/home-1/mcp-hub.png" alt="MCP Hub">
                                 <span>IA</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-openclaw.html">OpenClaw — Assistant IA Discord</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-robot"></i> Ollama (Llama 3 2B), Discord</li>
-                                </ul>
-                                <a href="application-openclaw.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-mcp-hub.html">MCP Hub — Control-plane Claude</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-plug"></i> RAG, skills, OAuth, pentest</li></ul>
+                                <a href="application-mcp-hub.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1.1s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/ollama.jpg" alt="Ollama">
+                                <img src="assets/img/home-1/openclaw.png" alt="OpenClaw">
                                 <span>IA</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-ollama.html">Ollama — Modèle IA local</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-brain"></i> Llama 3.2 1B (~1.3GB)</li>
-                                </ul>
-                                <a href="application-ollama.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-openclaw.html">OpenClaw — Assistant IA Discord</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-robot"></i> DeepSeek, Discord</li></ul>
+                                <a href="application-openclaw.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1.2s">
                         <div class="pp-news-card-item-2">
                             <div class="pp-news-image">
-                                <img src="assets/img/home-1/resh.jpg" alt="Resh">
-                                <span>Second Cerveau</span>
+                                <img src="assets/img/home-1/docker_redteam_1.jpg" alt="Pentesting">
+                                <span>Sécurité</span>
                             </div>
                             <div class="pp-news-content">
-                                <h3>
-                                    <a href="application-resh.html">Resh — Agent IA Second Cerveau</a>
-                                </h3>
-                                <ul class="news-post">
-                                    <li><i class="fa-solid fa-robot"></i> Obsidian, skills, contexte perso</li>
-                                </ul>
-                                <a href="application-resh.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                                <h3><a href="application-pentesting.html">Pentesting — Lab de scans éphémères</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-magnifying-glass"></i> MCP Hub, VPN, allowlist</li></ul>
+                                <a href="application-pentesting.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1.3s">
+                        <div class="pp-news-card-item-2">
+                            <div class="pp-news-image">
+                                <img src="assets/img/home-1/stock-analyzer.png" alt="Stock Analyzer">
+                                <span>Finance</span>
+                            </div>
+                            <div class="pp-news-content">
+                                <h3><a href="application-stock-analyzer.html">Stock Analyzer — Analyse long terme</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-chart-line"></i> Filings, dialectique, valorisation</li></ul>
+                                <a href="application-stock-analyzer.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="1.4s">
+                        <div class="pp-news-card-item-2">
+                            <div class="pp-news-image">
+                                <img src="assets/img/home-1/nocodb.png" alt="NocoDB">
+                                <span>Données</span>
+                            </div>
+                            <div class="pp-news-content">
+                                <h3><a href="application-nocodb.html">NocoDB — Base type tableur</a></h3>
+                                <ul class="news-post"><li><i class="fa-solid fa-table"></i> sheets.kubesecurebox.com</li></ul>
+                                <a href="application-nocodb.html" class="pp-theme-btn mt-3">Voir la fiche <i class="fa-solid fa-arrow-right-long"></i></a>
                             </div>
                         </div>
                     </div>
@@ -452,9 +434,9 @@
                                 <ul class="pp-list-area">
                                     <li><a href="application-grafana.html">Grafana</a></li>
                                     <li><a href="application-argocd.html">ArgoCD</a></li>
-                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
                                     <li><a href="application-portainer.html">Portainer</a></li>
-                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
+                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
+                                    <li><a href="application-nocodb.html">NocoDB</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -465,11 +447,13 @@
                                 </div>
                                 <ul class="pp-list-area">
                                     <li><a href="application-n8n.html">n8n</a></li>
+                                    <li><a href="application-resh.html">Resh</a></li>
+                                    <li><a href="application-mcp-hub.html">MCP Hub</a></li>
+                                    <li><a href="application-stock-analyzer.html">Stock Analyzer</a></li>
+                                    <li><a href="application-pentesting.html">Pentesting</a></li>
+                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
                                     <li><a href="application-portfolio.html">Portfolio</a></li>
                                     <li><a href="application-matomo.html">Matomo</a></li>
-                                    <li><a href="application-pentesting.html">Pentesting</a></li>
-                                    <li><a href="application-ollama.html">Ollama</a></li>
-                                    <li><a href="application-resh.html">Resh</a></li>
                                 </ul>
                             </div>
                         </div>

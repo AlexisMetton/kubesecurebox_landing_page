@@ -73,6 +73,18 @@
                 }
             }
         }
+
+        > .pp-theme-btn {
+            margin-bottom: 48px;
+
+            @include breakpoint (max-lg) {
+                margin-bottom: 40px;
+            }
+
+            @include breakpoint (max-sm) {
+                margin-bottom: 32px;
+            }
+        }
     }
 }
 

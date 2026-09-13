@@ -1,5 +1,29 @@
 .pp-service-details-wrapper {
 
+    > .row {
+        @include breakpoint(max-lg) {
+            .col-lg-4 {
+                order: 2;
+                margin-top: 32px;
+            }
+
+            .col-lg-8 {
+                order: 1;
+            }
+
+            .sticky-style {
+                position: static !important;
+                top: auto;
+            }
+        }
+
+        @include breakpoint(max-sm) {
+            .col-lg-4 {
+                margin-top: 24px;
+            }
+        }
+    }
+
     .pp-service-details-image {
         margin-bottom: 50px;
 

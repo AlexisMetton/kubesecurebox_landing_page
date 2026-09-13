@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="KubeSecureBox">
-        <meta name="description" content="Portfolio Alexis Metton – Site web personnel disponible sur Internet.">
-        <title>Portfolio – Mes applications – KubeSecureBox</title>
+        <meta name="description" content="NocoDB sur KubeSecureBox : base de données type tableur collaborative, sheets.kubesecurebox.com.">
+        <title>NocoDB – Mes applications – KubeSecureBox</title>
         <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/all.min.css">
@@ -19,7 +19,6 @@
 
         <script>
             var _paq = window._paq = window._paq || [];
-            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
             _paq.push(['trackPageView']);
             _paq.push(['enableLinkTracking']);
             (function() {
@@ -30,8 +29,6 @@
             g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
             })();
         </script>
-        <!-- End Matomo Code -->
-  
     </head>
     <body>
 
@@ -58,7 +55,6 @@
         <div class="mouseCursor cursor-outer"></div>
         <div class="mouseCursor cursor-inner"></div>
 
-        <!-- Offcanvas (menu mobile) -->
         <div class="fix-area">
             <div class="offcanvas__info">
                 <div class="offcanvas__wrapper">
@@ -111,12 +107,12 @@
         <div class="pp-breadcrumb-wrapper pp-hero-style fix bg-cover" style="background-image: url(assets/img/inner-page/breadcrumb.jpg);">
             <div class="container">
                 <div class="pp-page-heading">
-                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">Portfolio</h1></div>
+                    <div class="pp-breadcrumb-sub-title"><h1 class="wow fadeInUp" data-wow-delay=".3s">NocoDB</h1></div>
                     <ul class="pp-breadcrumb-items wow fadeInUp" data-wow-delay=".5s">
                         <li><i class="fa-solid fa-chevron-right"></i></li>
                         <li><a href="applications.html">Applications</a></li>
                         <li><i class="fa-solid fa-chevron-right"></i></li>
-                        <li>Portfolio</li>
+                        <li>NocoDB</li>
                     </ul>
                 </div>
             </div>
@@ -132,10 +128,10 @@
                                     <div class="wid-title"><h2>Voir aussi</h2></div>
                                     <div class="pp-service-widget-categories">
                                         <ul>
-                                            <li class="active"><a href="application-portfolio.html" class="d-flex align-items-center justify-content-between w-100">Portfolio <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li class="active"><a href="application-nocodb.html" class="d-flex align-items-center justify-content-between w-100">NocoDB <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-phpmyadmin.html" class="d-flex align-items-center justify-content-between w-100">phpMyAdmin <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                             <li><a href="application-matomo.html" class="d-flex align-items-center justify-content-between w-100">Matomo <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                             <li><a href="application-n8n.html" class="d-flex align-items-center justify-content-between w-100">n8n <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-grafana.html" class="d-flex align-items-center justify-content-between w-100">Grafana <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -143,16 +139,20 @@
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="pp-service-details-content">
-                                <div class="mb-4"><img src="assets/img/home-1/portfolio.png" alt="Portfolio" class="img-fluid rounded"></div>
-                                <h3>Portfolio — Site web personnel</h3>
-                                <p class="mb-4">Mon portfolio personnel présente mes projets, compétences et expériences professionnelles. Le site est développé avec les mêmes pratiques de développement que KubeSecureBox : intégration continue (CI) et déploiement continu (CD) via GitHub Actions.</p>
-                                <p class="mb-4">Le site est déployé sur Internet et accessible publiquement à l'adresse <strong>alexismetton.com</strong>. Il utilise le même système de build et de déploiement automatisé que ce site KubeSecureBox, garantissant une cohérence dans les pratiques de développement et de déploiement.</p>
+                                <div class="mb-4"><img src="assets/img/home-1/nocodb.png" alt="NocoDB" class="img-fluid rounded"></div>
+                                <h3>NocoDB — Base de données type tableur</h3>
+                                <p class="mb-4"><strong>NocoDB</strong> transforme une base relationnelle en interface type tableur : idéale pour des données structurées collaboratives sans passer par un SaaS Sheets externe. Sur KubeSecureBox, elle complète les apps métier quand un modèle tabulaire simple suffit.</p>
+                                <h3>Ce que ça fait</h3>
+                                <p class="mb-4">Création de tables, vues, filtres et formulaires sur une base sous-jacente. Utile pour inventaires, suivis légers ou datasets partagés entre projets du cluster.</p>
+                                <h3>Stack technique</h3>
+                                <p class="mb-4">NocoDB, stockage persistant PVC, HTTPS via cert-manager / ingress.</p>
                                 <h3>Accès</h3>
-                                <p class="mb-4">Le portfolio est accessible publiquement sur Internet à l'adresse <strong>alexismetton.com</strong>. Contrairement aux autres interfaces du cluster KubeSecureBox, ce site n'est pas limité au réseau Tailscale et est ouvert à tous les visiteurs.</p>
+                                <p class="mb-4">Interface sous <strong>sheets.kubesecurebox.com</strong>, réservée au réseau Tailscale.</p>
                                 <ul class="pp-details-list mb-4">
-                                    <li><i class="fa-solid fa-circle-check"></i>Disponible sur Internet (accès public)</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>CI/CD via GitHub Actions</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS via cert-manager</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>UI type tableur sur base relationnelle</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Alternative self-hosted à Google Sheets</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Intégrable aux workflows cluster (n8n, etc.)</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS + accès Tailscale</li>
                                 </ul>
                             </div>
                         </div>
@@ -161,7 +161,6 @@
             </div>
         </section>
 
-        <!-- Pp-cta Section Start -->
         <section class="pp-cta-section section-padding fix theme-bg">
             <div class="top-shape">
                 <img src="assets/img/home-1/cta/bg.png" alt="img">

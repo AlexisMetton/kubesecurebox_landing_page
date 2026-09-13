@@ -138,7 +138,47 @@
 	}
 
 	@include breakpoint(max-lg){
-		padding: 80px 0;
+		padding: 72px 0;
+	}
+
+	@include breakpoint(max-md){
+		padding: 56px 0;
+	}
+
+	@include breakpoint(max-sm){
+		padding: 48px 0;
+	}
+}
+
+// Unified horizontal inset — matches .header-1 .container-fluid on mobile/tablet
+@include breakpoint(max-xl) {
+	.header-1 .container-fluid {
+		padding-inline: var(--pp-page-gutter);
+	}
+
+	section .container,
+	.pp-brand-section > .container {
+		padding-inline: var(--pp-page-gutter);
+		max-width: 100%;
+	}
+
+	.pp-hero-1,
+	.pp-cta-section,
+	.pp-pricing-section,
+	.pp-how-work-section {
+		margin-inline: var(--pp-page-gutter);
+	}
+
+	.pp-hero-1 {
+		> .container {
+			padding-inline: var(--pp-page-gutter);
+		}
+	}
+
+	.pp-cta-section {
+		> .container {
+			padding-inline: var(--pp-section-inner-inset);
+		}
 	}
 }
 //>>>>> Basic Css End <<<<<//

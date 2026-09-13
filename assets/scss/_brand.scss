@@ -1,3 +1,55 @@
+.pp-brand-section {
+    overflow: hidden;
+
+    > .container {
+        overflow: hidden;
+    }
+
+    .pp-brand-slider {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .brand-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 0;
+        gap: 4px;
+
+        img {
+            width: 80px;
+            height: 56px;
+            max-width: 80px;
+            max-height: 56px;
+            object-fit: contain;
+
+            @include breakpoint (max-lg) {
+                width: 64px;
+                height: 44px;
+                max-width: 64px;
+                max-height: 44px;
+            }
+
+            @include breakpoint (max-xs) {
+                width: 52px;
+                height: 36px;
+                max-width: 52px;
+                max-height: 36px;
+            }
+        }
+    }
+
+    .brand-name {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--pp-heading, #1a1a1a);
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
 .brand-wrapper {
    border-bottom: 1px solid #CCCBD13D;
    padding-bottom: 120px;

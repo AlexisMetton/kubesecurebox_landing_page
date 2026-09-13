@@ -80,6 +80,22 @@
        Wow Animation Js Start
     ================================ */
 
+      // Hidden interface cards: remove from grid + WOW so they take zero layout space
+      const $interfacesCardsRow = $('.pp-interfaces-cards');
+      if ($interfacesCardsRow.length) {
+        let $interfacesHiddenStash = $('#pp-interfaces-hidden-stash');
+        if (!$interfacesHiddenStash.length) {
+          $interfacesHiddenStash = $('<div id="pp-interfaces-hidden-stash" class="pp-interfaces-hidden-stash" aria-hidden="true"></div>');
+          $interfacesCardsRow.after($interfacesHiddenStash);
+        }
+        $interfacesCardsRow.find('.pp-interface-item-hidden').each(function() {
+          this.style.visibility = '';
+          this.style.animationName = '';
+          $(this).removeClass('wow fadeInUp animated');
+          $interfacesHiddenStash.append(this);
+        });
+      }
+
       new WOW().init();
   
       /* ================================
@@ -372,16 +388,26 @@
     if ($interfacesLoadMore.length) {
       const interfacesBatchSize = 6;
 
+      const $interfacesCardsRow = $('.pp-interfaces-cards');
+      const $interfacesHiddenStash = $('#pp-interfaces-hidden-stash');
+
       const updateInterfacesLoadMore = function() {
-        const $hiddenItems = $('.pp-interfaces-cards .pp-interface-item-hidden');
-        if ($hiddenItems.length === 0) {
+        const remaining = $interfacesHiddenStash.find('.pp-interface-item-hidden').length;
+        if (remaining === 0) {
           $interfacesLoadMore.closest('.pp-interfaces-more-wrap').addClass('is-hidden');
         }
       };
 
       $interfacesLoadMore.on('click', function() {
-        const $hiddenItems = $('.pp-interfaces-cards .pp-interface-item-hidden');
-        $hiddenItems.slice(0, interfacesBatchSize).removeClass('pp-interface-item-hidden');
+        $interfacesHiddenStash.find('.pp-interface-item-hidden').slice(0, interfacesBatchSize).each(function() {
+          const item = this;
+          item.style.visibility = 'visible';
+          item.style.animationName = '';
+          $(item)
+            .appendTo($interfacesCardsRow)
+            .removeClass('pp-interface-item-hidden')
+            .addClass('animated fadeInUp');
+        });
         updateInterfacesLoadMore();
       });
 

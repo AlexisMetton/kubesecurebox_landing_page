@@ -1,6 +1,6 @@
 
 .pp-hero-1 {
-    margin: 0 40px;
+    margin: 0 var(--pp-page-gutter);
     border-radius: 48px;
     position: relative;
     padding: 150px 0 0;
@@ -14,10 +14,6 @@
 
      @include breakpoint (max-lg) {
         padding: 140px 0 80px;
-     }
-
-     @include breakpoint (max-sm) {
-        margin: 0 15px;
      }
 
      &::before {
@@ -53,14 +49,21 @@
         text-align: center;
         margin-bottom: 48px;
 
+        @include breakpoint (max-xl) {
+            text-align: center;
+        }
+
         h1 {
             color: $pp-white;
             margin-bottom: 20px;
+            text-align: center;
         }
 
          p {
             color: rgba(255, 255, 255, 0.88);
             max-width: 1025px;
+            margin-inline: auto;
+            text-align: center;
         }
 
         .pp-hero-button {
@@ -72,6 +75,12 @@
             @include breakpoint (max-xl) {
                 flex-wrap: wrap;
                 margin-top: 30px;
+                justify-content: center;
+            }
+
+            @include breakpoint (max-sm) {
+                flex-direction: column;
+                align-items: center;
             }
 
             .pp-theme-btn {
@@ -91,10 +100,19 @@
      }
 
      .pp-hero-image {
+        @include breakpoint (max-xl) {
+            margin-inline: 0;
+            max-width: 100%;
+        }
+
         img {
             @include imgw;
             border-radius: 24px;
             border: 1px solid $pp-border-color;
+
+            @include breakpoint (max-sm) {
+                border-radius: 16px;
+            }
         }
     }
 }

@@ -320,15 +320,11 @@
         }
 
         @include breakpoint (max-xxl){
-            padding: 0 40px;
+            padding: 0 var(--pp-page-gutter);
         }
 
         @include breakpoint (max-xl){
-            padding: 0 30px;
-        }
-
-		@include breakpoint (max-xxs){
-            padding: 0 15px;
+            padding-inline: var(--pp-page-gutter);
         }
     }
 
@@ -860,6 +856,34 @@
 				i {
 					color: $pp-white;
 				}
+			}
+		}
+	}
+
+	&.pp-hero-style {
+		margin: 0 40px;
+		margin-top: 40px;
+		border-radius: 48px;
+		overflow: hidden;
+
+		@include breakpoint (max-xl) {
+			margin: 0 30px;
+			margin-top: 0;
+		}
+
+		@include breakpoint (max-xxs) {
+			margin-inline: 15px;
+		}
+
+		.pp-page-heading {
+			padding: 150px 0 120px;
+
+			@include breakpoint (max-xl) {
+				padding: 150px 0 100px;
+			}
+
+			@include breakpoint (max-lg) {
+				padding: 130px 0 80px;
 			}
 		}
 	}

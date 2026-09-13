@@ -10,6 +10,22 @@
     --pp-border: #CCCBD13D;
     --pp-bg: #FAFAFA;
     --pp-box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
+    --pp-page-gutter: 40px;
+    --pp-section-inner-inset: 16px;
+}
+
+@include breakpoint(max-xl) {
+    :root {
+        --pp-page-gutter: 30px;
+        --pp-how-work-inner-inset: var(--pp-page-gutter);
+    }
+}
+
+@include breakpoint(max-xxs) {
+    :root {
+        --pp-page-gutter: 15px;
+        --pp-how-work-inner-inset: 24px;
+    }
 }
 
 // Theme Color - Defualt Colors

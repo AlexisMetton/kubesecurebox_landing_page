@@ -28,6 +28,63 @@
 
     @include breakpoint (max-lg) {
          padding: 50px 0 80px;
+         text-align: center !important;
+
+         .row {
+            justify-content: center !important;
+         }
+
+         [class*="col-"] {
+            text-align: center;
+         }
+
+         .pp-footer-widget-items {
+            text-align: center;
+
+            .pp-widget-head {
+                text-align: center;
+            }
+
+            .pp-footer-logo {
+                display: inline-block;
+            }
+
+            .pp-footer-logo .footer-logo-img,
+            .pp-footer-logo img.footer-logo-img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .pp-footer-content {
+                p {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                .social-icon {
+                    justify-content: center;
+                }
+            }
+
+            .pp-list-area {
+                display: inline-block;
+                text-align: center;
+                padding-left: 0;
+                list-style-position: inside;
+            }
+
+            .pp-list-area li:hover {
+                margin-left: 0;
+            }
+         }
+    }
+
+    .pp-footer-logo .footer-logo-img,
+    .pp-footer-logo img.footer-logo-img {
+        max-width: 320px;
+        width: auto;
+        height: auto;
+        display: block;
     }
 
     .pp-footer-widget-items {
@@ -205,6 +262,10 @@
     border-top: 1px solid rgba(205, 206, 208, 0.24);
     background-color: $pp-header-color;
 
+    @include breakpoint (max-lg) {
+        text-align: center !important;
+    }
+
     p {
         color: $pp-white;
 
@@ -223,6 +284,21 @@
             flex-wrap: wrap;
             gap: 25px;
             justify-content: center;
+            text-align: center;
+        }
+
+        @include breakpoint (max-lg) {
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            gap: 15px;
+
+            p {
+                width: 100%;
+                text-align: center !important;
+                margin-bottom: 0;
+            }
         }
 
 
@@ -230,10 +306,16 @@
             @include flex;
             gap: 30px;
 
+            @include breakpoint (max-lg) {
+                justify-content: center !important;
+                width: 100%;
+                padding-left: 0;
+                margin: 0 auto;
+            }
+
             @include breakpoint (max-sm){
                 flex-wrap: wrap;
                 gap: 20px;
-                justify-content: center;
             }
 
             li {

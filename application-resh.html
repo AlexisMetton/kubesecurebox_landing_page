@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="KubeSecureBox">
-        <meta name="description" content="Resh sur KubeSecureBox : agent IA personnel du Second Cerveau — Obsidian, skills, contexte et automatisation.">
+        <meta name="description" content="Resh sur KubeSecureBox : RAG personnel — Obsidian, Google Drive, Telegram, embeddings et DeepSeek.">
         <title>Resh – Mes applications – KubeSecureBox</title>
         <link rel="shortcut icon" href="assets/img/logo/favicon_kubesecurebox.png">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -129,9 +129,9 @@
                                     <div class="pp-service-widget-categories">
                                         <ul>
                                             <li class="active"><a href="application-resh.html" class="d-flex align-items-center justify-content-between w-100">Resh <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-mcp-hub.html" class="d-flex align-items-center justify-content-between w-100">MCP Hub <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                             <li><a href="application-openclaw.html" class="d-flex align-items-center justify-content-between w-100">OpenClaw <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-ollama.html" class="d-flex align-items-center justify-content-between w-100">Ollama <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
-                                            <li><a href="application-n8n.html" class="d-flex align-items-center justify-content-between w-100">n8n <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
+                                            <li><a href="application-stock-analyzer.html" class="d-flex align-items-center justify-content-between w-100">Stock Analyzer <span><i class="fa-regular fa-arrow-right-long"></i></span></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -139,22 +139,21 @@
                         </div>
                         <div class="col-12 col-lg-8">
                             <div class="pp-service-details-content">
-                                <div class="mb-4"><img src="assets/img/home-1/resh.jpg" alt="Resh — Agent IA Second Cerveau" class="img-fluid rounded"></div>
-                                <h3>Resh — Agent IA du Second Cerveau</h3>
-                                <p class="mb-4"><strong>Resh</strong> est mon agent IA personnel, conçu autour du principe du <em>second cerveau</em> : un système de connaissance externe qui accumule, structure et réutilise le contexte au fil du temps. Contrairement à un chatbot générique, Resh s'appuie sur un coffre Obsidian (<strong>Second Cerveau</strong>), des skills personnalisés et une mémoire de travail persistante pour produire des réponses ancrées dans mes projets, mes casquettes et ma phase de vie actuelle.</p>
-                                <p class="mb-4">L'architecture suit l'idée des trois couches indépendantes : le <strong>modèle</strong> (Claude, OpenCode, etc.), le <strong>provider</strong> (API ou local via Ollama) et l'<strong>interface</strong> (Cursor, Claude Code). Le travail investi dans le contexte — notes, MOCs, skills, inbox — est portable : changer de modèle ou de provider ne détruit pas le second cerveau construit.</p>
-                                <h3>Ce que Resh fait</h3>
-                                <p class="mb-4">Resh orchestre des workflows récurrents via des skills dédiés : brief matinal (<code>/morning-brief</code>), quiz du matin, création de notes permanentes, maintenance du Garden Obsidian, et bien d'autres automatisations. Il accède à Google Workspace (Drive, Docs, Sheets) via <strong>gog</strong>, convertit des documents via MCP <strong>markitdown</strong>, et travaille toujours dans le coffre <code>Second Cerveau/</code> par défaut.</p>
-                                <h3>Stack &amp; intégrations</h3>
-                                <p class="mb-4">Le second cerveau repose sur <strong>Obsidian</strong> (prise de notes, liens, MOCs), <strong>Claude Code</strong> et <strong>OpenCode</strong> comme interfaces agentiques, <strong>Telegram</strong> pour échanger avec le cluster et <strong>Playwright</strong> pour l'automatisation web. Les données structurées passent par <strong>NocoDB</strong> (<strong>sheets.kubesecurebox.com</strong>) quand un tableur collaboratif est nécessaire.</p>
+                                <div class="mb-4"><img src="assets/img/home-1/resh.jpg" alt="Resh — RAG Second Cerveau" class="img-fluid rounded"></div>
+                                <h3>Resh — Second cerveau interrogable</h3>
+                                <p class="mb-4"><strong>Resh</strong> est mon RAG personnel déployé sur le cluster : il indexe mon coffre Obsidian (<em>Second Cerveau</em>) et des documents Google Drive, puis répond avec un contexte ancré dans mes notes — via Telegram, une API interne, ou des agents connectés au MCP Hub.</p>
+                                <h3>Ce que ça fait</h3>
+                                <p class="mb-4">Des CronJobs synchronisent régulièrement le vault Obsidian et Drive vers Postgres (pgvector). Les embeddings passent par OpenAI ; la génération par DeepSeek. Un bot Telegram (allowlist) permet de poser des questions, d’envoyer du vocal (Whisper) et de récupérer des stats / dossiers. L’API FastAPI (<code>/ask</code>, <code>/search</code>, …) est consommée par le MCP Hub pour exposer le même savoir à Claude.</p>
+                                <h3>Stack technique</h3>
+                                <p class="mb-4">FastAPI, PostgreSQL + pgvector, embeddings OpenAI <code>text-embedding-3-small</code>, LLM DeepSeek, bot Telegram, backups CronJob. Le lien public <code>/open</code> redirige vers Obsidian derrière Cloudflare Access — l’API elle-même reste interne au cluster.</p>
                                 <h3>Accès</h3>
-                                <p class="mb-4">L'accès est réservé au réseau Tailscale. Resh dialogue avec le workspace local et le coffre Obsidian synchronisé — le contexte reste sous mon contrôle, sans dépendance à un SaaS tiers pour la mémoire.</p>
+                                <p class="mb-4">Interface principale : bot Telegram (utilisateurs autorisés). Redirect Obsidian : <strong>rag.kubesecurebox.com/open</strong> (Cloudflare Access). API Bearer pour les clients internes et le MCP Hub.</p>
                                 <ul class="pp-details-list mb-4">
-                                    <li><i class="fa-solid fa-circle-check"></i>Second cerveau Obsidian avec skills personnalisés</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>Contexte portable — modèle et provider interchangeables</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>Automatisations : brief matinal, quiz, notes permanentes</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>Intégrations MCP, Google Workspace et NocoDB</li>
-                                    <li><i class="fa-solid fa-circle-check"></i>HTTPS via cert-manager, accès Tailscale uniquement</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Ingest Obsidian + Google Drive vers pgvector</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Q&amp;A ancré dans le second cerveau (DeepSeek)</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Bot Telegram avec allowlist et vocal</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>API consommée par MCP Hub pour Claude</li>
+                                    <li><i class="fa-solid fa-circle-check"></i>Redirect <code>/open</code> protégé par Cloudflare Access</li>
                                 </ul>
                             </div>
                         </div>
@@ -222,9 +221,9 @@
                                 <ul class="pp-list-area">
                                     <li><a href="application-grafana.html">Grafana</a></li>
                                     <li><a href="application-argocd.html">ArgoCD</a></li>
-                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
                                     <li><a href="application-portainer.html">Portainer</a></li>
-                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
+                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
+                                    <li><a href="application-nocodb.html">NocoDB</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -233,10 +232,13 @@
                                 <div class="pp-widget-head"><h3>Applicatif</h3></div>
                                 <ul class="pp-list-area">
                                     <li><a href="application-n8n.html">n8n</a></li>
+                                    <li><a href="application-resh.html">Resh</a></li>
+                                    <li><a href="application-mcp-hub.html">MCP Hub</a></li>
+                                    <li><a href="application-stock-analyzer.html">Stock Analyzer</a></li>
+                                    <li><a href="application-pentesting.html">Pentesting</a></li>
+                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
                                     <li><a href="application-portfolio.html">Portfolio</a></li>
                                     <li><a href="application-matomo.html">Matomo</a></li>
-                                    <li><a href="application-pentesting.html">Pentesting</a></li>
-                                    <li><a href="application-resh.html">Resh</a></li>
                                 </ul>
                             </div>
                         </div>

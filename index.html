@@ -208,14 +208,8 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/n8n.webp" alt="n8n">
-                                    <span class="brand-name">n8n</span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/ansible.webp" alt="Ansible">
-                                    <span class="brand-name">Ansible</span>
+                                    <img src="assets/img/home-1/brand/argocd.png" alt="ArgoCD">
+                                    <span class="brand-name">ArgoCD</span>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -232,12 +226,6 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/argocd.png" alt="ArgoCD">
-                                    <span class="brand-name">ArgoCD</span>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-image text-center">
                                     <img src="assets/img/home-1/brand/loki.png" alt="Loki">
                                     <span class="brand-name">Loki</span>
                                 </div>
@@ -246,6 +234,30 @@
                                 <div class="brand-image text-center">
                                     <img src="assets/img/home-1/brand/tailscale.png" alt="Tailscale">
                                     <span class="brand-name">Tailscale</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/cloudflare.svg" alt="Cloudflare">
+                                    <span class="brand-name">Cloudflare</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/cert-manager.svg" alt="cert-manager">
+                                    <span class="brand-name">cert-manager</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/sealed-secrets.svg" alt="Sealed Secrets">
+                                    <span class="brand-name">Sealed Secrets</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/n8n.webp" alt="n8n">
+                                    <span class="brand-name">n8n</span>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -274,20 +286,32 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/claude.svg" alt="Claude Code">
-                                    <span class="brand-name">Claude Code</span>
+                                    <img src="assets/img/home-1/brand/postgresql.svg" alt="PostgreSQL">
+                                    <span class="brand-name">PostgreSQL</span>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/opencode.svg" alt="OpenCode">
-                                    <span class="brand-name">OpenCode</span>
+                                    <img src="assets/img/home-1/brand/nextjs.svg" alt="Next.js">
+                                    <span class="brand-name">Next.js</span>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/telegram.svg" alt="Telegram">
-                                    <span class="brand-name">Telegram</span>
+                                    <img src="assets/img/home-1/brand/claude.svg" alt="Claude">
+                                    <span class="brand-name">Claude</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/deepseek.svg" alt="DeepSeek">
+                                    <span class="brand-name">DeepSeek</span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="brand-image text-center">
+                                    <img src="assets/img/home-1/brand/openai.svg" alt="OpenAI">
+                                    <span class="brand-name">OpenAI</span>
                                 </div>
                             </div>
                             <div class="swiper-slide">
@@ -298,8 +322,8 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="brand-image text-center">
-                                    <img src="assets/img/home-1/brand/playwright.svg" alt="Playwright">
-                                    <span class="brand-name">Playwright</span>
+                                    <img src="assets/img/home-1/brand/telegram.svg" alt="Telegram">
+                                    <span class="brand-name">Telegram</span>
                                 </div>
                             </div>
                         </div>
@@ -336,7 +360,7 @@
                                     <strong>Infrastructure matérielle</strong> — Un nœud maître Raspberry Pi 4 (8 Go) et deux workers Pi 5 (8 Go), disque 4 To en NFS, switch Gigabit. Cartes microSD et câbles Ethernet pour l’interconnexion.
                                 </p>
                                 <p class="pp-text wow fadeInUp" data-wow-delay=".5s">
-                                    <strong>Infrastructure logicielle</strong> — Chaque nœud est provisionné avec Ansible (sécurité, Tailscale, jointure au cluster Kubernetes). Sur le cluster : Kubernetes (K3s), GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki). Apps métier : outil de pentesting, n8n (automatisation), parmi d'autres applications déployées sur le cluster.
+                                    <strong>Infrastructure logicielle</strong> — Chaque nœud est provisionné avec Ansible (sécurité, Tailscale, jointure au cluster Kubernetes). Sur le cluster : Kubernetes (K3s), GitOps (ArgoCD), monitoring (Prometheus, Grafana, Loki). Apps métier : Resh, MCP Hub, Stock Analyzer, pentest-lab, n8n, parmi d'autres applications déployées sur le cluster.
                                 </p>
                                 <div class="about-count-item wow fadeInUp" data-wow-delay=".3s">
                                     <div class="count-text">
@@ -417,7 +441,7 @@
         </section>
 
         <!-- Pp-How-Wowk Section Start -->
-        <section id="fonctionnement" class="pp-how-work-section section-padding fix section-bg-2">
+        <section id="fonctionnement" class="pp-how-work-section section-padding fix section-bg-2 mt-5">
             <div class="top-shape">
                 <img src="assets/img/home-1/feature/bg-shape.png" alt="img">
             </div>
@@ -467,7 +491,7 @@
         </section>
 
         <!-- Pp-key-feature Section Start -->
-        <section class="pp-key-feature-section section-padding pb-0 fix">
+        <section class="pp-key-feature-section section-padding fix">
             <div class="container">
                 <div class="pp-key-feature-wrapper">
                     <div class="row g-4">
@@ -627,18 +651,18 @@
         </section>
 
         <!-- Pp-testimonial Section Start -->
-        <section id="interfaces" class="pp-testimonial-section section-padding fix">
+        <section id="interfaces" class="pp-testimonial-section section-padding">
             <div class="container">
                 <div class="pp-section-title-area">
                     <div class="pp-section-title">
                         <span class="pp-sub-title wow fadeInUp">INTERFACES WEB</span>
                         <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                            Accès HTTPS via Tailscale
+                            Apps déployées sur le cluster
                         </h2>
                     </div>
                 </div>
                 <div class="row g-4 pp-interfaces-cards">
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".3s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".3s">
                         <a href="application-grafana.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -652,7 +676,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".4s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".4s">
                         <a href="application-argocd.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -666,7 +690,49 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".5s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".5s">
+                        <a href="application-resh.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/resh.jpg" alt="Resh">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Resh</h4>
+                                    <p>Second cerveau RAG</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".6s">
+                        <a href="application-mcp-hub.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/mcp-hub.png" alt="MCP Hub">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>MCP Hub</h4>
+                                    <p>Control-plane pour Claude</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".7s">
+                        <a href="application-stock-analyzer.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/stock-analyzer.png" alt="Stock Analyzer">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Stock Analyzer</h4>
+                                    <p>Dossiers d'investissement</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".8s">
                         <a href="application-pentesting.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -674,13 +740,13 @@
                                 </div>
                                 <div class="pp-interface-card-body">
                                     <h4>Pentesting</h4>
-                                    <p>Outils de scan</p>
+                                    <p>Lab de scans éphémères</p>
                                     <span class="pp-interface-link">Voir l'app</span>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".6s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay=".9s">
                         <a href="application-n8n.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -688,55 +754,13 @@
                                 </div>
                                 <div class="pp-interface-card-body">
                                     <h4 class="pp-preserve-case">n8n</h4>
-                                    <p>Automatisation</p>
+                                    <p>Automatisation de workflows</p>
                                     <span class="pp-interface-link">Voir l'app</span>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".7s">
-                        <a href="application-portfolio.html" class="pp-interface-card-link">
-                            <div class="pp-interface-card">
-                                <div class="pp-interface-card-img">
-                                    <img src="assets/img/home-1/portfolio.png" alt="Portfolio">
-                                </div>
-                                <div class="pp-interface-card-body">
-                                    <h4>Portfolio</h4>
-                                    <p>Site web personnel</p>
-                                    <span class="pp-interface-link">Voir l'app</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item wow fadeInUp" data-wow-delay=".8s">
-                        <a href="application-matomo.html" class="pp-interface-card-link">
-                            <div class="pp-interface-card">
-                                <div class="pp-interface-card-img">
-                                    <img src="assets/img/home-1/matomo.png" alt="Matomo">
-                                </div>
-                                <div class="pp-interface-card-body">
-                                    <h4>Matomo</h4>
-                                    <p>Analytics et statistiques</p>
-                                    <span class="pp-interface-link">Voir l'app</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay=".9s">
-                        <a href="application-phpmyadmin.html" class="pp-interface-card-link">
-                            <div class="pp-interface-card">
-                                <div class="pp-interface-card-img">
-                                    <img src="assets/img/home-1/phpmyadmin.png" alt="phpMyAdmin">
-                                </div>
-                                <div class="pp-interface-card-body">
-                                    <h4>phpMyAdmin</h4>
-                                    <p>Administration MySQL</p>
-                                    <span class="pp-interface-link">Voir l'app</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1s">
                         <a href="application-portainer.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -750,7 +774,49 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.1s">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.1s">
+                        <a href="application-portfolio.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/portfolio.png" alt="Portfolio">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Portfolio</h4>
+                                    <p>Site web personnel</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.2s">
+                        <a href="application-matomo.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/matomo.png" alt="Matomo">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>Matomo</h4>
+                                    <p>Analytics et statistiques</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.3s">
+                        <a href="application-phpmyadmin.html" class="pp-interface-card-link">
+                            <div class="pp-interface-card">
+                                <div class="pp-interface-card-img">
+                                    <img src="assets/img/home-1/phpmyadmin.png" alt="phpMyAdmin">
+                                </div>
+                                <div class="pp-interface-card-body">
+                                    <h4>phpMyAdmin</h4>
+                                    <p>Administration MySQL</p>
+                                    <span class="pp-interface-link">Voir l'app</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.4s">
                         <a href="application-openclaw.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
@@ -764,29 +830,15 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.2s">
-                        <a href="application-ollama.html" class="pp-interface-card-link">
+                    <div class="col-12 col-sm-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.5s">
+                        <a href="application-nocodb.html" class="pp-interface-card-link">
                             <div class="pp-interface-card">
                                 <div class="pp-interface-card-img">
-                                    <img src="assets/img/home-1/ollama.jpg" alt="Ollama">
+                                    <img src="assets/img/home-1/nocodb.png" alt="NocoDB">
                                 </div>
                                 <div class="pp-interface-card-body">
-                                    <h4>Ollama</h4>
-                                    <p>Modèle IA local</p>
-                                    <span class="pp-interface-link">Voir l'app</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-4 pp-interface-item pp-interface-item-hidden wow fadeInUp" data-wow-delay="1.3s">
-                        <a href="application-resh.html" class="pp-interface-card-link">
-                            <div class="pp-interface-card">
-                                <div class="pp-interface-card-img">
-                                    <img src="assets/img/home-1/resh.jpg" alt="Resh">
-                                </div>
-                                <div class="pp-interface-card-body">
-                                    <h4>Resh</h4>
-                                    <p>Agent IA — Second Cerveau</p>
+                                    <h4>NocoDB</h4>
+                                    <p>Base type tableur</p>
                                     <span class="pp-interface-link">Voir l'app</span>
                                 </div>
                             </div>
@@ -804,7 +856,7 @@
         </section>
         
         <!-- Pp-cta Section Start -->
-        <section class="pp-cta-section section-padding fix theme-bg">
+        <section class="pp-cta-section section-padding theme-bg">
             <div class="top-shape">
                 <img src="assets/img/home-1/cta/bg.png" alt="img">
             </div>
@@ -828,10 +880,10 @@
                         <div class="col-lg-6">
                             <div class="pp-cta-content">
                                 <h2 class="wow fadeInUp" data-wow-delay=".3s">
-                                    L’intégralité du projet sur GitHub
+                                    Infra, apps et GitOps en open source
                                 </h2>
                                 <p class="wow fadeInUp" data-wow-delay=".5s">
-                                    L’ensemble du projet KubeSecureBox est disponible sur GitHub. Les dépôts liés à ce projet sont préfixés par « kubesecurebox_ ».
+                                    Manifests, configs et apps KubeSecureBox sont sur GitHub — dépôts préfixés <span class="pp-preserve-case">kubesecurebox_</span>.
                                 </p>
                                 <div class="pp-cta-button">
                                     <a href="https://github.com/AlexisMetton?tab=repositories" target="_blank" rel="noopener" class="pp-theme-btn wow fadeInUp" data-wow-delay=".3s">Voir sur GitHub <i class="fa-solid fa-arrow-right-long"></i></a>
@@ -877,9 +929,9 @@
                                 <ul class="pp-list-area">
                                     <li><a href="application-grafana.html">Grafana</a></li>
                                     <li><a href="application-argocd.html">ArgoCD</a></li>
-                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
                                     <li><a href="application-portainer.html">Portainer</a></li>
-                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
+                                    <li><a href="application-phpmyadmin.html">phpMyAdmin</a></li>
+                                    <li><a href="application-nocodb.html">NocoDB</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -890,11 +942,13 @@
                                 </div>
                                 <ul class="pp-list-area">
                                     <li><a href="application-n8n.html">n8n</a></li>
+                                    <li><a href="application-resh.html">Resh</a></li>
+                                    <li><a href="application-mcp-hub.html">MCP Hub</a></li>
+                                    <li><a href="application-stock-analyzer.html">Stock Analyzer</a></li>
+                                    <li><a href="application-pentesting.html">Pentesting</a></li>
+                                    <li><a href="application-openclaw.html">OpenClaw</a></li>
                                     <li><a href="application-portfolio.html">Portfolio</a></li>
                                     <li><a href="application-matomo.html">Matomo</a></li>
-                                    <li><a href="application-pentesting.html">Pentesting</a></li>
-                                    <li><a href="application-ollama.html">Ollama</a></li>
-                                    <li><a href="application-resh.html">Resh</a></li>
                                 </ul>
                             </div>
                         </div>

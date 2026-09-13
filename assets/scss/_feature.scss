@@ -73,14 +73,16 @@
 }
 
 .pp-how-work-section {
-    margin: 0 40px;
+    margin: 0 var(--pp-page-gutter);
     border-radius: 48px;
     position: relative;
     z-index: 9;
 
-    @include breakpoint (max-sm) {
-        margin: 0 15px;
-     }
+    @include breakpoint(max-xl) {
+        > .container {
+            padding-inline: var(--pp-how-work-inner-inset);
+        }
+    }
 
     .top-shape {
         position: absolute;
@@ -232,6 +234,18 @@
                 }
             }
         }
+
+        > .pp-theme-btn {
+            margin-bottom: 48px;
+
+            @include breakpoint (max-lg) {
+                margin-bottom: 40px;
+            }
+
+            @include breakpoint (max-sm) {
+                margin-bottom: 32px;
+            }
+        }
     }
 
     &.pp-style-2 {
@@ -292,6 +306,25 @@
                     border-radius: 24px;
                 }
             }
+        }
+    }
+
+    @include breakpoint (max-lg) {
+        .row {
+            flex-direction: column;
+
+            > .col-lg-6:has(.pp-key-feature-content) {
+                order: 1;
+            }
+
+            > .col-lg-6:has(.pp-key-feature-image) {
+                order: 2;
+            }
+        }
+
+        .pp-key-feature-image {
+            margin-top: 0;
+            margin-bottom: 48px;
         }
     }
 }
